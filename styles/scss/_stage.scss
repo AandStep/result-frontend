@@ -1,0 +1,180 @@
+$font-primary: "Montserrat", sans-serif;
+$font-title: "Benzin", sans-serif;
+$color-text: #000000;
+$color-text-light: rgba(0, 0, 0, 0.5);
+$bg-card: #f8f8f8;
+$radius-card: 1.75rem;
+
+.stages {
+  width: 100%;
+  background-color: #fff;
+  padding: clamp(2rem, 1.11rem + 4.44vw, 4.5rem) 0
+    clamp(2rem, 1.11rem + 4.44vw, 4.5rem) 0;
+
+  &__title {
+    font-family: $font-title;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: $color-text;
+    line-height: 1.4;
+    font-size: clamp(1.25rem, 0.98rem + 1.33vw, 2rem);
+    margin-bottom: clamp(2rem, 1.64rem + 1.78vw, 3rem);
+  }
+
+  /* --- Navigation --- */
+  &__nav {
+    width: 100%;
+    margin-bottom: clamp(2rem, 1.82rem + 0.89vw, 2.5rem);
+
+    /* Скролл для меню */
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__nav-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap; /* Важно: в одну строку */
+    gap: clamp(3rem, 1rem + 4vw, 6rem);
+    width: 100%;
+  }
+
+  &__nav-item {
+    font-family: $font-primary;
+    font-weight: 500;
+    font-size: clamp(0.875rem, 0.61rem + 1.33vw, 1.625rem);
+    color: $color-text-light;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: color 0.3s ease;
+    flex-shrink: 0;
+    user-select: none;
+
+    &--active {
+      color: $color-text;
+      cursor: default;
+    }
+  }
+
+  &__nav-arrow {
+    display: block;
+    width: 0.5rem;
+    height: 0.9rem;
+    background-image: url("data:image/svg+xml,%3Csvg width='9' height='15' viewBox='0 0 9 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L7 7.5L1 13.5' stroke='black' stroke-width='1.5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    flex-shrink: 0;
+    user-select: none;
+  }
+
+  /* --- Slider Container --- */
+  /* Используем сдвоенный класс .stages__slider.swiper 
+     Это повышает вес селектора (2 класса > 1 класс), 
+     и перебивает стандартный .swiper { overflow: hidden } */
+  &__slider.swiper {
+    width: 100%;
+    padding-left: clamp(1rem, -51.875rem + 50vw, 8.125rem);
+    padding-bottom: 60px; /* Чтобы тени не резались снизу */
+    margin-bottom: -60px;
+    @media (max-width: 768px) {
+      padding-left: clamp(0.5rem, -3.211rem + 3.51vw, 1rem);
+    }
+  }
+}
+
+/* --- Card Styles --- */
+/* Используем .stage-card.swiper-slide 
+   Это перебивает стандартный .swiper-slide { width: 100% } */
+.stage-card.swiper-slide {
+  position: relative;
+  background-color: $bg-card;
+  border-radius: $radius-card;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+  -webkit-user-select: none;
+
+  /* Размеры */
+  width: clamp(280px, 98.18px + 56.82vw, 680px);
+  height: clamp(328px, 272.55px + 17.33vw, 450px);
+  padding: clamp(1.5rem, 1.23rem + 1.33vw, 2.25rem);
+
+  /* Отступ справа */
+  margin-right: clamp(1rem, -6rem + 35vw, 20.625rem);
+
+  opacity: 0.3;
+  transition: opacity 0.4s ease;
+
+  &.swiper-slide-active,
+  &.swiper-slide-duplicate-active {
+    opacity: 1;
+  }
+
+  /* Вложенные элементы без изменений */
+  .stage-card__content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+  }
+
+  .stage-card__text {
+    font-family: $font-primary;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.8);
+    line-height: 1.4;
+    font-size: clamp(0.875rem, 0.61rem + 1.33vw, 1.625rem);
+  }
+
+  .stage-card__number-wrap {
+    display: none;
+    @media (min-width: 768px) {
+      display: block;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 275px;
+      z-index: 1;
+      pointer-events: none;
+    }
+  }
+
+  .stage-card__number {
+    display: block;
+    width: auto;
+    height: 100%;
+    object-fit: contain;
+    margin-left: auto;
+  }
+
+  .stage-card__img {
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+    right: -50px;
+    bottom: -50px;
+    width: auto;
+    max-height: 80%;
+
+    @media (min-width: 768px) {
+      right: -150px;
+      bottom: -30px;
+    }
+
+    @media (min-width: 1024px) {
+      right: -330px;
+      bottom: -15px;
+      max-height: none;
+    }
+  }
+}

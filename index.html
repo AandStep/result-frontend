@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <section class="hero">
+      <div class="hero__bg-wrapper">
+        <img
+          src="../../img/hero-bkg.png"
+          alt="Laptop Background"
+          class="hero__bg hero__bg--desktop"
+        />
+
+        <img
+          src="../../img/hero-bkg-mobile.svg"
+          alt=""
+          class="hero__bg hero__bg--mobile"
+          aria-hidden="true"
+        />
+
+        <div class="hero__fade-overlay"></div>
+      </div>
+
+      <div class="container">
+        <header class="header">
+          <div class="header__left">
+            <button class="burger-btn" type="button" aria-label="Открыть меню">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+
+            <nav class="header__nav">
+              <a href="#" class="header__link">УСЛУГИ</a>
+              <a href="#" class="header__link">ЭТАПЫ РАБОТЫ</a>
+            </nav>
+          </div>
+
+          <a href="/" class="header__logo">
+            <img
+              src="img/logo-main.svg"
+              alt="Result Logo"
+              class="header__logo-img header__logo-img--desktop"
+            />
+            <img
+              src="img/logo-white.svg"
+              alt="Result Logo"
+              class="header__logo-img header__logo-img--mobile"
+            />
+          </a>
+
+          <div class="header__right">
+            <a href="tel:+79955721248" class="header__phone"
+              >+7 (995) 572 12-48</a
+            >
+            <a href="mailto:resultpoint.dev@gmail.com" class="header__email"
+              >resultpoint.dev@gmail.com</a
+            >
+          </div>
+        </header>
+
+        <div class="hero__content">
+          <div class="hero__text-block">
+            <h1 class="hero__title">
+              Сайт под ключ <br />
+              который продает
+            </h1>
+            <p class="hero__subtitle">
+              Бесплатный первичный анализ вашего сайта за 3 минуты
+            </p>
+          </div>
+
+          <button class="btn btn--white hero__btn">ОСТАВИТЬ ЗАЯВКУ</button>
+        </div>
+      </div>
+    </section>
+    <section class="solutions">
+      <div class="container">
+        <h2 class="solutions__title">НАШЕ РЕШЕНИЕ</h2>
+
+        <div class="solutions__slider">
+          <div class="solutions__slide solutions__slide--active">
+            <article class="solution-card">
+              <div class="solution-card__header">
+                <div class="solution-card__meta">
+                  <span class="solution-card__number">01</span>
+                  <h3 class="solution-card__heading">Лендинг</h3>
+                </div>
+
+                <div class="solution-card__controls">
+                  <button
+                    class="solution-card__arrow solution-card__arrow--prev"
+                    disabled
+                    aria-label="Предыдущий слайд"
+                  >
+                    <svg
+                      width="10"
+                      height="15"
+                      viewBox="0 0 10 15"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M7.5 12.5L2.5 7.5L7.5 2.5"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </button>
+                  <button
+                    class="solution-card__arrow solution-card__arrow--next"
+                    aria-label="Следующий слайд"
+                  >
+                    <svg
+                      width="10"
+                      height="15"
+                      viewBox="0 0 10 15"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M2.5 12.5L7.5 7.5L2.5 2.5"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <div class="solution-card__body">
+                <div class="solution-card__content">
+                  <div class="solution-card__price">
+                    <span>от 39.000 р.</span>
+                  </div>
+
+                  <div class="solution-card__text">
+                    <p class="solution-card__lead">
+                      Быстрая настройка. Конверсия. Форма заявки.
+                    </p>
+                    <p class="solution-card__description">
+                      Одностраничный сайт, главная задача которого — побудить
+                      пользователя совершить одно конкретное целевое действие,
+                      например, купить товар, оставить заявку, подписаться на
+                      рассылку, позвонить.
+                    </p>
+                  </div>
+
+                  <button class="btn btn--green solution-card__btn">
+                    ЗАПОЛНИТЬ ФОРМУ
+                  </button>
+                </div>
+
+                <div class="solution-card__visual">
+                  <img
+                    src="img/mac.png"
+                    alt="Пример лендинга на ноутбуке"
+                    class="solution-card__img"
+                  />
+                </div>
+              </div>
+            </article>
+
+            <div class="solution-mobile-visual">
+              <img
+                src="img/mac.png"
+                alt="Пример лендинга на ноутбуке"
+                class="solution-mobile-visual__img"
+              />
+              <div class="solution-mobile-visual__overlay"></div>
+            </div>
+          </div>
+          <div class="solutions__slide solutions__slide">
+            <article class="solution-card">
+              <div class="solution-card__header">
+                <div class="solution-card__meta">
+                  <span class="solution-card__number">02</span>
+                  <h3 class="solution-card__heading">Интернет-магазин</h3>
+                </div>
+
+                <div class="solution-card__controls">
+                  <button
+                    class="solution-card__arrow solution-card__arrow--prev"
+                    disabled
+                    aria-label="Предыдущий слайд"
+                  >
+                    <svg
+                      width="10"
+                      height="15"
+                      viewBox="0 0 10 15"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M7.5 12.5L2.5 7.5L7.5 2.5"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </button>
+                  <button
+                    class="solution-card__arrow solution-card__arrow--next"
+                    aria-label="Следующий слайд"
+                  >
+                    <svg
+                      width="10"
+                      height="15"
+                      viewBox="0 0 10 15"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M2.5 12.5L7.5 7.5L2.5 2.5"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <div class="solution-card__body">
+                <div class="solution-card__content">
+                  <div class="solution-card__price">
+                    <span>от 65.000 р.</span>
+                  </div>
+
+                  <div class="solution-card__text">
+                    <p class="solution-card__lead">
+                      Онлайн-оплата. Каталог. Админ-панель.
+                    </p>
+                    <p class="solution-card__description">
+                      Одностраничный сайт, главная задача которого — побудить
+                      пользователя совершить одно конкретное целевое действие,
+                      например, купить товар, оставить заявку, подписаться на
+                      рассылку, позвонить.
+                    </p>
+                  </div>
+
+                  <button class="btn btn--green solution-card__btn">
+                    ЗАПОЛНИТЬ ФОРМУ
+                  </button>
+                </div>
+
+                <div class="solution-card__visual">
+                  <img
+                    src="img/iphone.png"
+                    alt="Пример лендинга на ноутбуке"
+                    class="solution-card__img"
+                  />
+                </div>
+              </div>
+            </article>
+
+            <div class="solution-mobile-visual">
+              <img
+                src="img/mac.png"
+                alt="Пример лендинга на ноутбуке"
+                class="solution-mobile-visual__img"
+              />
+              <div class="solution-mobile-visual__overlay"></div>
+            </div>
+          </div>
+          <div class="solutions__slide solutions__slide">
+            <article class="solution-card">
+              <div class="solution-card__header">
+                <div class="solution-card__meta">
+                  <span class="solution-card__number">03</span>
+                  <h3 class="solution-card__heading">Лендинг</h3>
+                </div>
+
+                <div class="solution-card__controls">
+                  <button
+                    class="solution-card__arrow solution-card__arrow--prev"
+                    disabled
+                    aria-label="Предыдущий слайд"
+                  >
+                    <svg
+                      width="10"
+                      height="15"
+                      viewBox="0 0 10 15"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M7.5 12.5L2.5 7.5L7.5 2.5"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </button>
+                  <button
+                    class="solution-card__arrow solution-card__arrow--next"
+                    aria-label="Следующий слайд"
+                  >
+                    <svg
+                      width="10"
+                      height="15"
+                      viewBox="0 0 10 15"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M2.5 12.5L7.5 7.5L2.5 2.5"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <div class="solution-card__body">
+                <div class="solution-card__content">
+                  <div class="solution-card__price">
+                    <span>от 39.000 р.</span>
+                  </div>
+
+                  <div class="solution-card__text">
+                    <p class="solution-card__lead">
+                      Быстрая настройка. Конверсия. Форма заявки.
+                    </p>
+                    <p class="solution-card__description">
+                      Одностраничный сайт, главная задача которого — побудить
+                      пользователя совершить одно конкретное целевое действие,
+                      например, купить товар, оставить заявку, подписаться на
+                      рассылку, позвонить.
+                    </p>
+                  </div>
+
+                  <button class="btn btn--green solution-card__btn">
+                    ЗАПОЛНИТЬ ФОРМУ
+                  </button>
+                </div>
+
+                <div class="solution-card__visual">
+                  <img
+                    src="img/mac.png"
+                    alt="Пример лендинга на ноутбуке"
+                    class="solution-card__img"
+                  />
+                </div>
+              </div>
+            </article>
+
+            <div class="solution-mobile-visual">
+              <img
+                src="img/mac.png"
+                alt="Пример лендинга на ноутбуке"
+                class="solution-mobile-visual__img"
+              />
+              <div class="solution-mobile-visual__overlay"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="stages">
+      <div class="container">
+        <h2 class="stages__title">ЭТАПЫ РАБОТЫ</h2>
+
+        <nav class="stages__nav">
+          <ul class="stages__nav-list">
+            <li
+              class="stages__nav-item stages__nav-item--active"
+              data-index="0"
+            >
+              Бриф
+            </li>
+
+            <li class="stages__nav-arrow" aria-hidden="true"></li>
+
+            <li class="stages__nav-item" data-index="1">Прототип</li>
+
+            <li class="stages__nav-arrow" aria-hidden="true"></li>
+
+            <li class="stages__nav-item" data-index="2">Дизайн</li>
+
+            <li class="stages__nav-arrow" aria-hidden="true"></li>
+
+            <li class="stages__nav-item" data-index="3">Верстка</li>
+
+            <li class="stages__nav-arrow" aria-hidden="true"></li>
+
+            <li class="stages__nav-item" data-index="4">Запуск</li>
+
+            <li class="stages__nav-arrow" aria-hidden="true"></li>
+
+            <li class="stages__nav-item" data-index="5">Поддержка</li>
+          </ul>
+        </nav>
+      </div>
+      <div class="stages__slider swiper">
+        <div class="stages__track swiper-wrapper">
+          <article class="stage-card swiper-slide">
+            <div class="stage-card__content">
+              <p class="stage-card__text">
+                Определяем цели, задачи и требования проекта. Формируем чёткое
+                техническое задание.
+              </p>
+            </div>
+            <div class="stage-card__number-wrap">
+              <img src="img/01.svg" alt="01" class="stage-card__number" />
+            </div>
+            <img src="img/stage-1.png" alt="Visual" class="stage-card__img" />
+          </article>
+
+          <article class="stage-card swiper-slide">
+            <div class="stage-card__content">
+              <p class="stage-card__text">
+                Создаём схему страниц и логики — быстро согласуем структуру
+                будущего сайта.
+              </p>
+            </div>
+            <div class="stage-card__number-wrap">
+              <img src="img/02.svg" alt="02" class="stage-card__number" />
+            </div>
+            <img src="img/stage-2.png" alt="Visual" class="stage-card__img" />
+          </article>
+
+          <article class="stage-card swiper-slide">
+            <div class="stage-card__content">
+              <p class="stage-card__text">
+                Разрабатываем визуальный стиль и внешний вид — сайт становится
+                понятным и привлекательным.
+              </p>
+            </div>
+            <div class="stage-card__number-wrap">
+              <img src="img/03.svg" alt="03" class="stage-card__number" />
+            </div>
+            <img src="img/stage-3.png" alt="Visual" class="stage-card__img" />
+          </article>
+
+          <article class="stage-card swiper-slide">
+            <div class="stage-card__content">
+              <p class="stage-card__text">
+                Переводим дизайн в работающий сайт — настраиваем адаптивность и
+                функционал.
+              </p>
+            </div>
+            <div class="stage-card__number-wrap">
+              <img src="img/04.svg" alt="04" class="stage-card__number" />
+            </div>
+            <img src="img/stage-4.png" alt="Visual" class="stage-card__img" />
+          </article>
+
+          <article class="stage-card swiper-slide">
+            <div class="stage-card__content">
+              <p class="stage-card__text">
+                Размещаем сайт на хостинге, подключаем домен и проводим
+                финальные проверки.
+              </p>
+            </div>
+            <div class="stage-card__number-wrap">
+              <img src="img/05.svg" alt="05" class="stage-card__number" />
+            </div>
+            <img src="img/stage-5.png" alt="Visual" class="stage-card__img" />
+          </article>
+
+          <article class="stage-card swiper-slide">
+            <div class="stage-card__content">
+              <p class="stage-card__text">
+                Обновляем, исправляем и развиваем сайт после запуска.
+              </p>
+            </div>
+            <div class="stage-card__number-wrap">
+              <img src="img/06.svg" alt="06" class="stage-card__number" />
+            </div>
+            <img src="img/stage-6.png" alt="Visual" class="stage-card__img" />
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // 1. Инициализация Слайдера
+        const mainSwiper = new Swiper(".stages__slider", {
+          slidesPerView: "auto",
+          spaceBetween: 0,
+          centeredSlides: true,
+          centeredSlidesBounds: true,
+          speed: 600,
+          grabCursor: true,
+          slideActiveClass: "swiper-slide-active",
+        });
+
+        // 2. Навигация
+        const navItems = document.querySelectorAll(".stages__nav-item"); // Выбираем только пункты, не стрелки
+
+        const updateNavState = (activeIndex) => {
+          navItems.forEach((item, index) => {
+            // Здесь index соответствует индексу в массиве navItems, который совпадает с индексами слайдов
+            if (index === activeIndex) {
+              item.classList.add("stages__nav-item--active");
+
+              // Плавный скролл самого меню, чтобы активный пункт был виден
+              item.scrollIntoView({
+                behavior: "smooth",
+                block: "nearest",
+                inline: "center",
+              });
+            } else {
+              item.classList.remove("stages__nav-item--active");
+            }
+          });
+        };
+
+        // Клик по тексту
+        navItems.forEach((item, index) => {
+          item.addEventListener("click", () => {
+            mainSwiper.slideTo(index);
+          });
+        });
+
+        // Синхронизация при свайпе
+        mainSwiper.on("slideChange", () => {
+          updateNavState(mainSwiper.activeIndex);
+        });
+
+        // Старт
+        updateNavState(0);
+      });
+    </script>
+  </body>
+</html>
