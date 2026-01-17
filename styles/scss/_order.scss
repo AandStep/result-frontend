@@ -1,0 +1,287 @@
+@use "sass:math";
+
+// --- User Functions ---
+@function rem($px) {
+  @return math.div($px, 16) * 1rem;
+}
+
+@function fluid($min-px, $max-px, $min-bp: 320, $max-bp: 1920) {
+  $slope: math.div($max-px - $min-px, $max-bp - $min-bp);
+  $y-axis: $min-px - ($min-bp * $slope);
+  // Используем CSS calc для смешивания единиц
+  $preferred: calc(#{$y-axis}px + #{$slope * 100}vw);
+  // Sass min/max для сортировки аргументов clamp, чтобы валидация CSS не ругалась
+  $css-min: min($min-px, $max-px);
+  $css-max: max($min-px, $max-px);
+  @return clamp(#{$css-min}px, $preferred, #{$css-max}px);
+}
+
+@function fluid-dt($val1, $val2) {
+  // Автоматически определяем min/max для правильной работы формулы
+  // Но передаем в fluid исходный порядок для расчета slope,
+  // а fluid внутри себя разберется с границами clamp
+  @return fluid($val1, $val2, 1024, 1920);
+}
+
+@function fluid-tm($val1, $val2) {
+  @return fluid($val1, $val2, 320, 1024);
+}
+
+// --- Mixin Wrapper ---
+// Адаптирует твои функции под логику: Desktop -> Tablet -> Mobile
+@mixin smart-clamp($property, $desktop-px, $tablet-px, $mobile-px) {
+  // 1. Desktop (1920 -> 1024)
+  // Мы передаем значения "от" и "до" для этого диапазона
+  #{$property}: fluid-dt($tablet-px, $desktop-px);
+
+  // 2. Mobile (1024 -> 320)
+  @media (max-width: 1024px) {
+    #{$property}: fluid-tm($mobile-px, $tablet-px);
+  }
+}
+
+// --- Variables ---
+$c-black: #000;
+$c-gray-light: #f8f8f8;
+$c-red: #ff0000;
+$c-green: #007e3a;
+$font-benzin: "Benzin", sans-serif;
+$font-mont: "Montserrat", sans-serif;
+
+// --- Styles ---
+.order {
+  position: relative;
+  background: linear-gradient(180deg, #ffffff 0%, #f9f9f9 100%);
+  z-index: 1;
+
+  // Отступы: 72 -> 36 -> 36 и 144 -> 72 -> 36
+  @include smart-clamp(padding-top, 72, 36, 36);
+  @include smart-clamp(padding-bottom, 144, 72, 36);
+
+  &__visual {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    max-width: 650px;
+    z-index: 0;
+    pointer-events: none;
+
+    @media (max-width: 1024px) {
+      display: none;
+    }
+  }
+
+  &__visual::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 175px;
+    background: linear-gradient(0deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+    z-index: 1;
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    vertical-align: bottom;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr 0.8fr;
+    align-items: start;
+    position: relative;
+    z-index: 2;
+
+    // Гапы: 150 -> 48 -> 24
+    @include smart-clamp(column-gap, 150, 48, 24);
+    @include smart-clamp(row-gap, 64, 48, 32);
+
+    @media (max-width: 1024px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  &__title {
+    font-family: $font-benzin;
+    font-weight: 500;
+    color: $c-black;
+    line-height: 1.4;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+
+    // Шрифт: 32 -> 28 -> 18
+    @include smart-clamp(font-size, 32, 28, 18);
+  }
+
+  &__form-wrapper {
+    position: relative;
+    width: 100%;
+  }
+}
+
+.order-form {
+  display: flex;
+  flex-direction: column;
+  @include smart-clamp(gap, 32, 24, 16);
+
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    @include smart-clamp(gap, 20, 20, 16);
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+  }
+
+  &__label {
+    font-family: $font-mont;
+    font-size: 1.125rem;
+    color: $c-black;
+    line-height: 1.4;
+
+    @media (max-width: 768px) {
+      font-size: 0.875rem;
+    }
+
+    .required {
+      color: $c-red;
+      margin-left: 2px;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    background-color: $c-gray-light;
+    border: 1px solid transparent;
+    outline: none;
+    font-family: $font-mont;
+    color: $c-black;
+    transition: all 0.3s ease;
+
+    @include smart-clamp(border-radius, 28, 28, 18);
+    @include smart-clamp(padding, 28, 28, 18);
+    @include smart-clamp(font-size, 18, 18, 14);
+
+    &::placeholder {
+      color: rgba(0, 0, 0, 0.3);
+    }
+
+    &:focus {
+      background-color: #fff;
+      border-color: rgba($c-green, 0.5);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    }
+    &.error {
+      border-color: $c-red;
+      background-color: rgba($c-red, 0.02);
+    }
+    &.success {
+      border-color: $c-green;
+    }
+  }
+
+  &__error {
+    font-size: 0.75rem;
+    color: $c-red;
+    position: absolute;
+    bottom: -1.4em;
+    left: 1rem;
+    opacity: 0;
+    transition: opacity 0.2s;
+    &.visible {
+      opacity: 1;
+    }
+  }
+
+  &__checkbox-wrapper {
+    margin-top: 0.5rem;
+  }
+
+  &__submit {
+    margin-top: 1rem;
+    width: 100%;
+    @media (min-width: 1025px) {
+      display: flex;
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+}
+
+// --- Checkbox (Без изменений, так как работает JS-класс) ---
+.custom-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+  user-select: none;
+  margin-top: 0.5rem;
+  position: relative;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    z-index: -1;
+  }
+
+  &__visual {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+    background-color: transparent;
+    transition: all 0.2s ease;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 14px 10px;
+  }
+
+  &__text {
+    font-family: $font-mont;
+    color: rgba(0, 0, 0, 0.6);
+    line-height: 1.4;
+    font-size: 1rem;
+    @media (max-width: 768px) {
+      font-size: 0.75rem;
+    }
+  }
+
+  // Active State via JS Class
+  &.is-checked {
+    .custom-checkbox__visual {
+      background-color: $c-green;
+      border-color: $c-green;
+      background-image: url("data:image/svg+xml,%3Csvg width='14' height='10' viewBox='0 0 14 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 5L4.5 8.5L13 1' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    }
+  }
+
+  &.error {
+    .custom-checkbox__visual {
+      border-color: $c-red;
+      box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.2);
+    }
+  }
+}

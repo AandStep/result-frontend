@@ -1,0 +1,205 @@
+@use "sass:math";
+
+$bp-tablet: 1024px;
+$bp-mobile: 320px;
+$bp-desktop: 1920px;
+
+@function fluid($min-size, $max-size, $min-width, $max-width) {
+  $size-diff: $max-size - $min-size;
+  $width-diff: $max-width - $min-width;
+  $slope: math.div($size-diff, $width-diff);
+  $y-axis-intersection: -$min-width * $slope + $min-size;
+  $slope-vw: $slope * 16 * 100;
+  @return clamp(
+    #{$min-size}rem,
+    #{$y-axis-intersection}rem + #{$slope-vw}vw,
+    #{$max-size}rem
+  );
+}
+
+.reviews {
+  width: 100%;
+  background-color: #fff;
+  overflow: hidden;
+
+  padding-top: #{fluid(2.25, 4.5, 1024, 1920)};
+  padding-bottom: #{fluid(2.25, 4.5, 1024, 1920)};
+
+  @media (max-width: $bp-tablet) {
+    padding-top: #{fluid(1.5, 2.25, 320, 1024)};
+    padding-bottom: #{fluid(1.5, 2.25, 320, 1024)};
+  }
+
+  &__container {
+    width: 100%;
+    max-width: 1692px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+
+  &__title {
+    font-family: "Benzin", sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #000;
+    line-height: 1.4;
+    font-size: 2rem;
+    margin-bottom: #{fluid(2, 4.5, 1024, 1920)};
+
+    @media (max-width: $bp-tablet) {
+      font-size: #{fluid(1.25, 2, 320, 1024)};
+      margin-bottom: #{fluid(1.5, 2, 320, 1024)};
+    }
+  }
+
+  &__scroll-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+    overflow: hidden; /* Важно: скрываем выход за границы */
+  }
+
+  &__track {
+    display: flex;
+    width: max-content;
+    gap: 1.25rem;
+    will-change: transform; /* Оптимизация для браузера */
+    /* Анимация удалена, управление через JS */
+  }
+
+  &__group {
+    display: flex;
+    gap: 1.25rem;
+    flex-shrink: 0; /* Группы не должны сжиматься */
+  }
+
+  /* ... стили карточек review-card остаются без изменений ... */
+
+  &__disclaimer {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.5);
+    text-align: right;
+    font-size: 0.875rem;
+    margin-top: 10px;
+
+    @media (max-width: $bp-tablet) {
+      font-size: #{fluid(0.75, 0.875, 320, 1024)};
+    }
+  }
+}
+
+// Карточка (стили те же, что я писал выше)
+.review-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #f8f8f8;
+  border-radius: 1.75rem;
+  flex-shrink: 0;
+
+  width: #{fluid(30.5, 33.75, 1024, 1920)};
+  height: #{fluid(30.5, 33.75, 1024, 1920)};
+  padding: #{fluid(1.125, 1.75, 1024, 1920)};
+
+  @media (max-width: $bp-tablet) {
+    width: #{fluid(16.75, 30.5, 320, 1024)};
+    height: #{fluid(16.75, 30.5, 320, 1024)};
+    padding: #{fluid(0.75, 1.125, 320, 1024)};
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1.5rem;
+
+    @media (max-width: $bp-tablet) {
+      gap: 1rem;
+    }
+  }
+
+  &__category {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 100px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.6);
+    text-align: center;
+    line-height: 1.4;
+    font-size: #{fluid(0.75, 0.875, 1024, 1920)};
+    padding: #{fluid(0.75, 1.75, 1024, 1920)} 1rem;
+
+    @media (max-width: $bp-tablet) {
+      font-size: 0.75rem;
+      padding: 0.75rem;
+    }
+  }
+
+  &__body {
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    color: #000;
+    line-height: 1.4;
+    font-size: 1.5rem;
+
+    @media (max-width: $bp-tablet) {
+      font-size: #{fluid(0.875, 1.5, 320, 1024)};
+    }
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: auto;
+  }
+
+  &__avatar {
+    width: #{fluid(2.875, 3.75, 1024, 1920)};
+    height: #{fluid(2.875, 3.75, 1024, 1920)};
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+
+    @media (max-width: $bp-tablet) {
+      width: 2.875rem;
+      height: 2.875rem;
+    }
+  }
+
+  &__author {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.25rem;
+  }
+
+  &__name {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    color: #000;
+    font-size: 1rem;
+
+    @media (max-width: $bp-tablet) {
+      font-size: #{fluid(0.875, 1, 320, 1024)};
+    }
+  }
+
+  &__company {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 1rem;
+
+    @media (max-width: $bp-tablet) {
+      font-size: #{fluid(0.875, 1, 320, 1024)};
+    }
+  }
+}

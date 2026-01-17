@@ -5,10 +5,57 @@
 @use "_hero.scss";
 @use "_solution.scss";
 @use "_stage.scss";
+@use "_reviews.scss";
+@use "_order.scss";
 
 .container {
   width: 100%;
   max-width: 1692px;
   padding: 0 clamp(0.5rem, 0.273rem + 1.14vw, 1rem);
   margin: 0 auto;
+}
+
+.toast-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 999999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  pointer-events: none;
+}
+
+.toast {
+  pointer-events: auto;
+  min-width: 280px;
+  padding: 16px 24px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-left: 4px solid #ccc;
+
+  transform: translateX(120%);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  will-change: transform;
+
+  &--visible {
+    transform: translateX(0);
+  }
+
+  &--success {
+    border-color: #007e3a;
+    color: #000;
+  }
+
+  &--error {
+    border-color: #ff0000;
+    color: #000;
+  }
 }

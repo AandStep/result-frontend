@@ -491,6 +491,166 @@
         </div>
       </div>
     </section>
+    <section class="reviews">
+      <div class="container">
+        <h2 class="reviews__title">ОТЗЫВЫ</h2>
+      </div>
+
+      <div class="reviews__scroll-wrapper">
+        <div class="reviews__track" id="reviewsTrack">
+          <div class="reviews__group">
+            <article class="review-card">
+              <div class="review-card__info">
+                <div class="review-card__category">Оформление соц-сетей</div>
+
+                <blockquote class="review-card__body">
+                  <p>
+                    “Все быстро и классно, оформили соц-сети без лишних
+                    объяснений, поддержали фирменный стиль компании, спасибо за
+                    оперативность”
+                  </p>
+                </blockquote>
+              </div>
+
+              <div class="review-card__footer">
+                <img
+                  src="img/person-img-2.png"
+                  alt="Дмитрий Смородов"
+                  class="review-card__avatar"
+                />
+                <div class="review-card__author">
+                  <span class="review-card__name">Дмитрий Смородов</span>
+                  <cite class="review-card__company">“STEKLO&IDEA”</cite>
+                </div>
+              </div>
+            </article>
+            <article class="review-card">
+              <div class="review-card__info">
+                <div class="review-card__category">Оформление соц-сетей</div>
+
+                <blockquote class="review-card__body">
+                  <p>
+                    “Все быстро и классно, оформили соц-сети без лишних
+                    объяснений, поддержали фирменный стиль компании, спасибо за
+                    оперативность”
+                  </p>
+                </blockquote>
+              </div>
+
+              <div class="review-card__footer">
+                <img
+                  src="img/person-img-2.png"
+                  alt="Дмитрий Смородов"
+                  class="review-card__avatar"
+                />
+                <div class="review-card__author">
+                  <span class="review-card__name">Дмитрий Смородов</span>
+                  <cite class="review-card__company">“STEKLO&IDEA”</cite>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="container">
+          <p class="reviews__disclaimer">
+            Информация взята из сервиса “Яндекс-карты”
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="order">
+      <div class="order__visual">
+        <img
+          src="img/order-visual.png"
+          alt=""
+          class="order__img"
+          loading="lazy"
+        />
+      </div>
+
+      <div class="container order__container">
+        <div class="order__content">
+          <h2 class="order__title">
+            ГОТОВЫ СДЕЛАТЬ ЗАКАЗ?<br />
+            ОСТАВЬТЕ ЗАЯВКУ И МЫ<br />
+            СВЯЖЕМСЯ С ВАМИ
+          </h2>
+        </div>
+
+        <div class="order__form-wrapper">
+          <form class="order-form" id="orderForm" novalidate>
+            <div class="order-form__row">
+              <div class="order-form__group">
+                <label for="userName" class="order-form__label">
+                  Ваше имя<span class="required">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="userName"
+                  name="name"
+                  class="order-form__input"
+                  placeholder="Имя"
+                  required
+                  minlength="2"
+                />
+                <span class="order-form__error" id="nameError"></span>
+              </div>
+
+              <div class="order-form__group">
+                <label for="userEmail" class="order-form__label">
+                  Почта<span class="required">*</span>
+                </label>
+                <input
+                  type="email"
+                  id="userEmail"
+                  name="email"
+                  class="order-form__input"
+                  placeholder="example@gmail.com"
+                  required
+                />
+                <span class="order-form__error" id="emailError"></span>
+              </div>
+            </div>
+
+            <div class="order-form__group">
+              <label for="userPhone" class="order-form__label"
+                >Номер телефона</label
+              >
+              <input
+                type="tel"
+                id="userPhone"
+                name="phone"
+                class="order-form__input"
+                placeholder="+7 (999) 123-45-67"
+              />
+            </div>
+
+            <div class="order-form__checkbox-wrapper">
+              <label class="custom-checkbox" id="policyLabel">
+                <input
+                  type="checkbox"
+                  name="policy"
+                  id="policyCheckbox"
+                  required
+                />
+                <span class="custom-checkbox__visual"></span>
+                <span class="custom-checkbox__text">
+                  Я ознакомлен (-на) с политикой конфиденциальности и даю
+                  согласие на обработку персональных данных
+                </span>
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn--green order-form__submit">
+              ОСТАВИТЬ ЗАЯВКУ
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <div id="toast-container" class="toast-container"></div>
 
     <script src="js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -542,6 +702,253 @@
 
         // Старт
         updateNavState(0);
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const track = document.getElementById("reviewsTrack");
+        if (!track) return;
+
+        // Находим эталонную группу (первый элемент в треке)
+        const originalGroup = track.querySelector(".reviews__group");
+        if (!originalGroup) return;
+
+        // Настройки
+        const speed = 0.5; // Скорость (чем меньше, тем медленнее)
+        let currentPos = 0;
+        let animationId;
+        let totalWidth = 0; // Ширина одного цикла (группы)
+
+        // Функция инициализации контента
+        const initMarquee = () => {
+          // 1. Сбрасываем трек до состояния "только оригинал"
+          // Сначала останавливаем анимацию, чтобы не было конфликтов
+          cancelAnimationFrame(animationId);
+
+          // Удаляем все клоны, оставляем только первый элемент (originalGroup)
+          while (track.children.length > 1) {
+            track.removeChild(track.lastChild);
+          }
+
+          // Сбрасываем позицию
+          currentPos = 0;
+          track.style.transform = `translate3d(0, 0, 0)`;
+
+          // 2. Вычисляем размеры
+          // Получаем gap из CSS (важно, чтобы не хардкодить 20px)
+          const trackStyle = window.getComputedStyle(track);
+          const gap = parseFloat(trackStyle.gap) || 0;
+
+          // Ширина одной группы = ширина элемента + gap
+          const groupRect = originalGroup.getBoundingClientRect();
+          const singleGroupWidth = groupRect.width + gap;
+
+          // Сохраняем ширину цикла для анимации
+          totalWidth = singleGroupWidth;
+
+          // 3. Рассчитываем необходимое количество клонов
+          // Нам нужно заполнить экран (window.innerWidth)
+          // + добавить запас (еще одну ширину экрана, чтобы при скролле не было дыр)
+          // + еще одну группу для безопасности цикла.
+          const screenWidth = window.innerWidth;
+          const minWidthToCover = screenWidth * 2 + singleGroupWidth;
+
+          // Сколько групп нужно, чтобы покрыть это расстояние?
+          const groupsNeeded = Math.ceil(minWidthToCover / singleGroupWidth);
+
+          // 4. Создаем клоны
+          // i начинается с 1, так как 0-й элемент (оригинал) уже есть
+          for (let i = 1; i < groupsNeeded; i++) {
+            const clone = originalGroup.cloneNode(true);
+            clone.setAttribute("aria-hidden", "true"); // Скрываем дубликаты от скринридеров
+            track.appendChild(clone);
+          }
+
+          // Перезапускаем анимацию
+          animationLoop();
+        };
+
+        // Цикл анимации
+        const animationLoop = () => {
+          currentPos += speed;
+
+          // Если прокрутили на ширину одной группы (цикл завершен) -> сбрасываем в 0
+          // Это происходит мгновенно и незаметно, так как клон выглядит идентично началу
+          if (currentPos >= totalWidth) {
+            currentPos = 0;
+          }
+
+          track.style.transform = `translate3d(-${currentPos}px, 0, 0)`;
+          animationId = requestAnimationFrame(animationLoop);
+        };
+
+        // Запуск
+        // Используем setTimeout, чтобы убедиться, что CSS стили (шрифты, размеры) загрузились
+        // и getBoundingClientRect вернул верные значения
+        setTimeout(initMarquee, 100);
+
+        // Пересчет при ресайзе окна (чтобы добавить клонов, если окно растянули)
+        let resizeTimer;
+        window.addEventListener("resize", () => {
+          clearTimeout(resizeTimer);
+          resizeTimer = setTimeout(initMarquee, 200); // Дебаунс, чтобы не дергалось при каждом пикселе
+        });
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // --- 1. Настройка элементов ---
+        const form = document.getElementById("orderForm");
+        const policyCheckbox = document.getElementById("policyCheckbox");
+        const policyLabel = document.getElementById("policyLabel");
+        const phoneInput = document.getElementById("userPhone");
+
+        if (!form) return;
+
+        // --- 2. Логика Чекбокса (JS-driven) ---
+        // Принудительно управляем визуальным состоянием через класс
+        if (policyCheckbox && policyLabel) {
+          policyCheckbox.addEventListener("change", () => {
+            if (policyCheckbox.checked) {
+              policyLabel.classList.add("is-checked");
+              policyLabel.classList.remove("error"); // Убираем красную рамку сразу
+            } else {
+              policyLabel.classList.remove("is-checked");
+            }
+          });
+        }
+
+        // --- 3. Маска телефона ---
+        const phoneMask = (e) => {
+          let el = e.target,
+            clearVal = el.value.replace(/\D/g, ""),
+            matrix = "+7 (___) ___-__-__",
+            i = 0,
+            def = matrix.replace(/\D/g, ""),
+            val = clearVal;
+
+          if (def.length >= val.length) val = def;
+
+          el.value = matrix.replace(/./g, function (a) {
+            return /[_\d]/.test(a) && i < val.length
+              ? val.charAt(i++)
+              : i >= val.length
+              ? ""
+              : a;
+          });
+        };
+
+        if (phoneInput) {
+          phoneInput.addEventListener("input", phoneMask);
+          phoneInput.addEventListener("focus", () => {
+            if (!phoneInput.value) phoneInput.value = "+7 ";
+          });
+          phoneInput.addEventListener("blur", () => {
+            if (phoneInput.value === "+7 ") phoneInput.value = "";
+          });
+        }
+
+        // --- 4. Тост-уведомления ---
+        const showToast = (message, type = "success") => {
+          let container = document.getElementById("toast-container");
+          if (!container) {
+            container = document.createElement("div");
+            container.style.cssText =
+              "position:fixed; top:20px; right:20px; z-index:9999; display:flex; flex-direction:column; gap:10px;";
+            container.id = "toast-container";
+            document.body.appendChild(container);
+          }
+
+          const toast = document.createElement("div");
+          const color = type === "success" ? "#007E3A" : "#FF0000";
+          const icon = type === "success" ? "✔" : "✖";
+
+          toast.style.cssText = `
+      background: #fff; border-left: 4px solid ${color}; padding: 16px 24px; 
+      border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.15); 
+      display: flex; gap: 12px; align-items: center; font-family: 'Montserrat', sans-serif;
+      min-width: 280px; transform: translateX(100%); transition: transform 0.3s ease;
+    `;
+
+          toast.innerHTML = `<span style="color:${color}; font-weight:bold; font-size:1.2em;">${icon}</span><span>${message}</span>`;
+          container.appendChild(toast);
+
+          // Анимация входа
+          requestAnimationFrame(
+            () => (toast.style.transform = "translateX(0)")
+          );
+
+          // Удаление
+          setTimeout(() => {
+            toast.style.transform = "translateX(120%)";
+            setTimeout(() => toast.remove(), 300);
+          }, 3000);
+        };
+
+        // --- 5. Валидация и Отправка ---
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          let errors = 0;
+
+          // Валидация Имени
+          const nameInp = form.querySelector('input[name="name"]');
+          if (nameInp.value.trim().length < 2) {
+            showError(nameInp, "Введите имя");
+            errors++;
+          } else showSuccess(nameInp);
+
+          // Валидация Почты
+          const emailInp = form.querySelector('input[name="email"]');
+          if (!emailInp.value.includes("@") || !emailInp.value.includes(".")) {
+            showError(emailInp, "Введите корректную почту");
+            errors++;
+          } else showSuccess(emailInp);
+
+          // Валидация Чекбокса (Важно!)
+          if (!policyCheckbox.checked) {
+            policyLabel.classList.add("error");
+            errors++;
+          } else {
+            policyLabel.classList.remove("error");
+          }
+
+          // Итог
+          if (errors === 0) {
+            const btn = form.querySelector('button[type="submit"]');
+            const oldText = btn.textContent;
+            btn.textContent = "Отправка...";
+            btn.disabled = true;
+
+            // Имитация успешной отправки
+            setTimeout(() => {
+              showToast("Заявка успешно отправлена!");
+              form.reset();
+              policyLabel.classList.remove("is-checked"); // Сброс визуала галочки
+
+              // Сброс стилей инпутов
+              form.querySelectorAll(".order-form__input").forEach((i) => {
+                i.style.borderColor = "transparent";
+                i.style.backgroundColor = "#F8F8F8";
+              });
+
+              btn.textContent = oldText;
+              btn.disabled = false;
+            }, 1500);
+          } else {
+            showToast("Заполните обязательные поля", "error");
+          }
+        });
+
+        // Хелперы стилей
+        function showError(input, msg) {
+          input.style.borderColor = "#FF0000";
+          input.style.backgroundColor = "rgba(255,0,0,0.02)";
+          // Можно добавить вывод текста ошибки в span, если нужно
+        }
+        function showSuccess(input) {
+          input.style.borderColor = "#007E3A";
+          input.style.backgroundColor = "#fff";
+        }
       });
     </script>
   </body>
