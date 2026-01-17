@@ -1,0 +1,15 @@
+// styles/scss/style.scss
+@use "fonts";
+@use "reset";
+@use "buttons";
+@use "_hero.scss";
+@use "_solution.scss";
+@use "_stage.scss";
+@use "_faq.scss";
+@use "_footer.scss";
+.container {
+  width: 100%;
+  max-width: 1692px;
+  padding: 0 clamp(0.5rem, 0.273rem + 1.14vw, 1rem);
+  margin: 0 auto;
+}
