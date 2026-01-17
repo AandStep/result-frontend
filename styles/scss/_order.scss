@@ -219,6 +219,7 @@ $font-mont: "Montserrat", sans-serif;
 
   &__submit {
     margin-top: 1rem;
+    @include smart-clamp(font-size, 18, 18, 1);
     width: 100%;
     @media (min-width: 1025px) {
       display: flex;

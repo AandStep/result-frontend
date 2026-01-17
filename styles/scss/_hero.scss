@@ -17,11 +17,8 @@
   overflow: hidden;
 
   // Фон страницы (светлый градиент), поверх него ляжет ноутбук, поверх ноутбука - текст
-  background: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0.25) 0%,
-      rgba(0, 0, 0, 0) 14.38%
-    ),
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 14.38%),
     linear-gradient(180deg, #fff 0%, #f9f9f9 100%);
 
   // Адаптивный паддинг
