@@ -876,20 +876,22 @@
         });
 
         // 2. Навигация
-        const navItems = document.querySelectorAll(".stages__nav-item"); // Выбираем только пункты, не стрелки
+        const navItems = document.querySelectorAll(".stages__nav-item");
 
-        const updateNavState = (activeIndex) => {
+        // Добавили второй аргумент 'shouldScroll' (по умолчанию true)
+        const updateNavState = (activeIndex, shouldScroll = true) => {
           navItems.forEach((item, index) => {
-            // Здесь index соответствует индексу в массиве navItems, который совпадает с индексами слайдов
             if (index === activeIndex) {
               item.classList.add("stages__nav-item--active");
 
-              // Плавный скролл самого меню, чтобы активный пункт был виден
-              item.scrollIntoView({
-                behavior: "smooth",
-                block: "nearest",
-                inline: "center",
-              });
+              // Выполняем скролл, только если разрешено
+              if (shouldScroll) {
+                item.scrollIntoView({
+                  behavior: "smooth",
+                  block: "nearest",
+                  inline: "center",
+                });
+              }
             } else {
               item.classList.remove("stages__nav-item--active");
             }
@@ -905,11 +907,19 @@
 
         // Синхронизация при свайпе
         mainSwiper.on("slideChange", () => {
-          updateNavState(mainSwiper.activeIndex);
+          // При свайпе скролл меню нужен
+          updateNavState(mainSwiper.activeIndex, true);
         });
 
-        // Старт
-        updateNavState(0);
+        // Старт (передаем false, чтобы при загрузке НЕ скроллило)
+        updateNavState(0, false);
+
+        // Клик по тексту
+        navItems.forEach((item, index) => {
+          item.addEventListener("click", () => {
+            mainSwiper.slideTo(index);
+          });
+        });
       });
     </script>
     <script>
