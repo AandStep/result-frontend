@@ -4,9 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
       this.container = document.querySelector(selector);
       if (!this.container) return;
 
-      // Select the wrapper slides, not the cards directly
       this.slides = Array.from(
-        this.container.querySelectorAll(".solutions__slide")
+        this.container.querySelectorAll(".solutions__slide"),
       );
       this.totalSlides = this.slides.length;
       this.activeIndex = 0;
@@ -23,6 +22,9 @@ document.addEventListener("DOMContentLoaded", () => {
       this.container.addEventListener("click", (e) => {
         const btn = e.target.closest(".solution-card__arrow");
         if (!btn) return;
+
+        // Если кнопка disabled, клик не должен срабатывать
+        if (btn.disabled) return;
 
         if (btn.classList.contains("solution-card__arrow--next")) {
           this.nextSlide();
@@ -51,10 +53,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const isActive = index === this.activeIndex;
 
         slide.classList.toggle("solutions__slide--active", isActive);
-
-        // Accessibility attributes if needed
         slide.setAttribute("aria-hidden", !isActive);
 
+        // Обновляем состояние кнопок только для активного слайда
         if (isActive) {
           this.updateButtons(slide);
         }
@@ -66,13 +67,14 @@ document.addEventListener("DOMContentLoaded", () => {
       const nextBtn = activeSlide.querySelector(".solution-card__arrow--next");
 
       if (prevBtn) {
-        prevBtn.style.display = this.activeIndex === 0 ? "none" : "";
+        // Убрали style.display, оставили только disabled
+        // Если индекс 0 (первый слайд) -> true (выключена)
         prevBtn.disabled = this.activeIndex === 0;
       }
 
       if (nextBtn) {
-        nextBtn.style.display =
-          this.activeIndex === this.totalSlides - 1 ? "none" : "";
+        // Убрали style.display, оставили только disabled
+        // Если индекс последний -> true (выключена)
         nextBtn.disabled = this.activeIndex === this.totalSlides - 1;
       }
     }

@@ -193,7 +193,6 @@
                 <div class="solution-card__controls">
                   <button
                     class="solution-card__arrow solution-card__arrow--prev"
-                    disabled
                     aria-label="Предыдущий слайд"
                   >
                     <svg
@@ -288,7 +287,6 @@
                 <div class="solution-card__controls">
                   <button
                     class="solution-card__arrow solution-card__arrow--prev"
-                    disabled
                     aria-label="Предыдущий слайд"
                   >
                     <svg
@@ -834,7 +832,33 @@
         </div>
       </div>
     </footer>
+    <div class="burger-menu" id="burgerMenu" aria-hidden="true">
+      <img
+        src="img/burger-bkg.svg"
+        alt=""
+        class="burger-menu__bg"
+        aria-hidden="true"
+      />
 
+      <div class="burger-menu__content">
+        <button
+          class="burger-menu__close"
+          id="burgerClose"
+          aria-label="Закрыть меню"
+        >
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="burger-menu__nav">
+          <a href="#" class="burger-menu__link">УСЛУГИ</a>
+          <a href="#" class="burger-menu__link">ЭТАПЫ РАБОТЫ</a>
+          <a href="#" class="burger-menu__link">ОТЗЫВЫ</a>
+          <a href="#" class="burger-menu__link">ОСТАВИТЬ ЗАЯВКУ</a>
+          <a href="#" class="burger-menu__link">ЧАСТЫЕ ВОПРОСЫ</a>
+        </nav>
+      </div>
+    </div>
     <script src="js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
@@ -848,6 +872,7 @@
           speed: 600,
           grabCursor: true,
           slideActiveClass: "swiper-slide-active",
+          touchEventsTarget: "container",
         });
 
         // 2. Навигация
@@ -1132,7 +1157,10 @@
           input.style.borderColor = "#007E3A";
           input.style.backgroundColor = "#fff";
         }
-
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
         const faqItems = document.querySelectorAll(".faq__item");
 
         faqItems.forEach((item) => {
@@ -1156,24 +1184,66 @@
     </script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        const faqItems = document.querySelectorAll(".faq__item");
+        const burgerBtn = document.querySelector(".burger-btn");
+        const burgerMenu = document.getElementById("burgerMenu");
+        const burgerClose = document.getElementById("burgerClose");
+        const menuLinks = document.querySelectorAll(".burger-menu__link");
 
-        faqItems.forEach((item) => {
-          const header = item.querySelector(".faq__header");
+        // Функция открытия
+        const openMenu = () => {
+          burgerMenu.classList.add("is-active");
+          burgerMenu.setAttribute("aria-hidden", "false");
+          document.body.classList.add("menu-open"); // Блокируем скролл фона
+        };
 
-          header.addEventListener("click", () => {
-            const isActive = item.classList.contains("faq__item--active");
+        // Функция закрытия
+        const closeMenu = () => {
+          burgerMenu.classList.remove("is-active");
+          burgerMenu.setAttribute("aria-hidden", "true");
+          document.body.classList.remove("menu-open");
+        };
 
-            // Закрываем все открытые элементы
-            faqItems.forEach((otherItem) => {
-              otherItem.classList.remove("faq__item--active");
-            });
-
-            // Если текущий элемент не был активен, открываем его
-            if (!isActive) {
-              item.classList.add("faq__item--active");
-            }
+        // 1. Открытие по кнопке в хедере
+        if (burgerBtn) {
+          burgerBtn.addEventListener("click", (e) => {
+            e.stopPropagation(); // Чтобы клик не ушел на document
+            openMenu();
           });
+        }
+
+        // 2. Закрытие по крестику
+        if (burgerClose) {
+          burgerClose.addEventListener("click", closeMenu);
+        }
+
+        // 3. Закрытие при клике на ссылку (навигация)
+        menuLinks.forEach((link) => {
+          link.addEventListener("click", closeMenu);
+        });
+
+        // 4. Закрытие при клике вне меню (опционально, но удобно для UX)
+        document.addEventListener("click", (e) => {
+          const isClickInside = burgerMenu.contains(e.target);
+          const isClickOnBtn = burgerBtn.contains(e.target);
+
+          // Если меню активно и клик был НЕ по меню и НЕ по кнопке открытия
+          if (
+            burgerMenu.classList.contains("is-active") &&
+            !isClickInside &&
+            !isClickOnBtn
+          ) {
+            closeMenu();
+          }
+        });
+
+        // 5. Закрытие по Esc
+        document.addEventListener("keydown", (e) => {
+          if (
+            e.key === "Escape" &&
+            burgerMenu.classList.contains("is-active")
+          ) {
+            closeMenu();
+          }
         });
       });
     </script>

@@ -432,6 +432,118 @@ img {
   }
 }
 
+/* --- Burger Menu Styles --- */
+.burger-menu {
+  border-radius: 0 26px 26px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+  background-color: #fff;
+  overflow: hidden;
+  box-shadow: 4px 4px 24px rgba(0, 0, 0, 0.1);
+  width: 410px;
+  height: 100%;
+  transform: translateX(-100%);
+  transition: all 0.5s ease-out;
+  opacity: 0;
+}
+.burger-menu.is-active {
+  opacity: 1;
+  transform: translateX(0);
+}
+.burger-menu__bg {
+  position: absolute;
+  bottom: 0;
+  opacity: 10%;
+  right: 0;
+  height: 100%;
+  width: auto;
+  pointer-events: none;
+  z-index: 0;
+}
+.burger-menu__content {
+  position: relative;
+  z-index: 2;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 128px;
+  height: 100%;
+  overflow-y: auto;
+}
+.burger-menu__close {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #000;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease;
+  flex-shrink: 0;
+}
+.burger-menu__close:hover {
+  transform: rotate(90deg);
+  background-color: #f0f0f0;
+}
+.burger-menu__close span {
+  position: absolute;
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: #000;
+  border-radius: 2px;
+}
+.burger-menu__close span:nth-child(1) {
+  transform: rotate(45deg);
+}
+.burger-menu__close span:nth-child(2) {
+  transform: rotate(-45deg);
+}
+.burger-menu__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+.burger-menu__link {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.6);
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.3s;
+  width: fit-content;
+}
+.burger-menu__link:hover {
+  color: #000;
+}
+.burger-menu {
+  /* --- Адаптив --- */
+}
+@media (max-width: 1024px) {
+  .burger-menu {
+    height: 100dvh;
+  }
+}
+@media (max-width: 768px) {
+  .burger-menu {
+    width: 100%;
+    height: 100dvh;
+    box-shadow: none;
+    border-radius: 0;
+  }
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
 .solutions {
   width: 100%;
   background-color: #fff;
@@ -1137,7 +1249,7 @@ img {
   left: 0;
   width: 100%;
   height: 175px;
-  background: linear-gradient(0deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(0deg, #f9f9f9 0%, rgba(255, 255, 255, 0) 100%);
   z-index: 1;
 }
 .order__img {
