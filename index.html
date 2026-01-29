@@ -1,1261 +1,1036 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/styles/css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-    <title>Document</title>
-  </head>
-  <body>
-    <section class="hero">
-      <div class="hero__bg-wrapper">
-        <img
-          src="../../img/hero-bkg.png"
-          alt="Laptop Background"
-          class="hero__bg hero__bg--desktop"
-        />
 
-        <img
-          src="../../img/hero-bkg-mobile.svg"
-          alt=""
-          class="hero__bg hero__bg--mobile"
-          aria-hidden="true"
-        />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/styles/css/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <title>Document</title>
+</head>
 
-        <div class="hero__fade-overlay"></div>
-      </div>
+<body>
+  <section class="hero">
+    <div class="hero__bg-wrapper">
+      <img src="../../img/hero-bkg.webp" alt="Laptop Background" class="hero__bg hero__bg--desktop" />
 
-      <div class="container">
-        <header class="header">
-          <div class="header__left">
-            <button class="burger-btn" type="button" aria-label="Открыть меню">
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
+      <img src="../../img/hero-bkg-mobile.svg" alt="" class="hero__bg hero__bg--mobile" aria-hidden="true" />
 
-            <nav class="header__nav">
-              <a href="#" class="header__link">УСЛУГИ</a>
-              <a href="#" class="header__link">ЭТАПЫ РАБОТЫ</a>
-            </nav>
-          </div>
+      <div class="hero__fade-overlay"></div>
+    </div>
 
-          <a href="/" class="header__logo">
-            <img
-              src="img/logo-main.svg"
-              alt="Result Logo"
-              class="header__logo-img header__logo-img--desktop"
-            />
-            <img
-              src="img/logo-white.svg"
-              alt="Result Logo"
-              class="header__logo-img header__logo-img--mobile"
-            />
-          </a>
+    <div class="container">
+      <header class="header">
+        <div class="header__left">
+          <button class="burger-btn" type="button" aria-label="Открыть меню">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
 
-          <div class="header__right">
-            <a href="tel:+79955721248" class="header__phone"
-              >+7 (995) 572 12-48</a
-            >
-            <a href="mailto:resultpoint.dev@gmail.com" class="header__email"
-              >resultpoint.dev@gmail.com</a
-            >
-          </div>
-        </header>
-
-        <div class="hero__content">
-          <div class="hero__text-block">
-            <h1 class="hero__title">
-              Сайт под ключ <br />
-              который продает
-            </h1>
-            <p class="hero__subtitle">
-              Бесплатный первичный анализ вашего сайта за 3 минуты
-            </p>
-          </div>
-
-          <button class="btn btn--white hero__btn">ОСТАВИТЬ ЗАЯВКУ</button>
-        </div>
-      </div>
-    </section>
-    <section class="solutions">
-      <div class="container">
-        <h2 class="solutions__title">НАШЕ РЕШЕНИЕ</h2>
-
-        <div class="solutions__slider">
-          <div class="solutions__slide solutions__slide--active">
-            <article class="solution-card">
-              <div class="solution-card__header">
-                <div class="solution-card__meta">
-                  <span class="solution-card__number">01</span>
-                  <h3 class="solution-card__heading">Лендинг</h3>
-                </div>
-
-                <div class="solution-card__controls">
-                  <button
-                    class="solution-card__arrow solution-card__arrow--prev"
-                    disabled
-                    aria-label="Предыдущий слайд"
-                  >
-                    <svg
-                      width="10"
-                      height="15"
-                      viewBox="0 0 10 15"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M7.5 12.5L2.5 7.5L7.5 2.5"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                  </button>
-                  <button
-                    class="solution-card__arrow solution-card__arrow--next"
-                    aria-label="Следующий слайд"
-                  >
-                    <svg
-                      width="10"
-                      height="15"
-                      viewBox="0 0 10 15"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M2.5 12.5L7.5 7.5L2.5 2.5"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-
-              <div class="solution-card__body">
-                <div class="solution-card__content">
-                  <div class="solution-card__price">
-                    <span>от 39.000 р.</span>
-                  </div>
-
-                  <div class="solution-card__text">
-                    <p class="solution-card__lead">
-                      Быстрая настройка. Конверсия. Форма заявки.
-                    </p>
-                    <p class="solution-card__description">
-                      Одностраничный сайт, главная задача которого — побудить
-                      пользователя совершить одно конкретное целевое действие,
-                      например, купить товар, оставить заявку, подписаться на
-                      рассылку, позвонить.
-                    </p>
-                  </div>
-
-                  <button class="btn btn--green solution-card__btn">
-                    ЗАПОЛНИТЬ ФОРМУ
-                  </button>
-                </div>
-
-                <div class="solution-card__visual">
-                  <img
-                    src="img/mac.png"
-                    alt="Пример лендинга на ноутбуке"
-                    class="solution-card__img"
-                  />
-                </div>
-              </div>
-            </article>
-
-            <div class="solution-mobile-visual">
-              <img
-                src="img/mac.png"
-                alt="Пример лендинга на ноутбуке"
-                class="solution-mobile-visual__img"
-              />
-              <div class="solution-mobile-visual__overlay"></div>
-            </div>
-          </div>
-          <div class="solutions__slide solutions__slide">
-            <article class="solution-card">
-              <div class="solution-card__header">
-                <div class="solution-card__meta">
-                  <span class="solution-card__number">02</span>
-                  <h3 class="solution-card__heading">Интернет-магазин</h3>
-                </div>
-
-                <div class="solution-card__controls">
-                  <button
-                    class="solution-card__arrow solution-card__arrow--prev"
-                    aria-label="Предыдущий слайд"
-                  >
-                    <svg
-                      width="10"
-                      height="15"
-                      viewBox="0 0 10 15"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M7.5 12.5L2.5 7.5L7.5 2.5"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                  </button>
-                  <button
-                    class="solution-card__arrow solution-card__arrow--next"
-                    aria-label="Следующий слайд"
-                  >
-                    <svg
-                      width="10"
-                      height="15"
-                      viewBox="0 0 10 15"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M2.5 12.5L7.5 7.5L2.5 2.5"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-
-              <div class="solution-card__body">
-                <div class="solution-card__content">
-                  <div class="solution-card__price">
-                    <span>от 65.000 р.</span>
-                  </div>
-
-                  <div class="solution-card__text">
-                    <p class="solution-card__lead">
-                      Онлайн-оплата. Каталог. Админ-панель.
-                    </p>
-                    <p class="solution-card__description">
-                      Одностраничный сайт, главная задача которого — побудить
-                      пользователя совершить одно конкретное целевое действие,
-                      например, купить товар, оставить заявку, подписаться на
-                      рассылку, позвонить.
-                    </p>
-                  </div>
-
-                  <button class="btn btn--green solution-card__btn">
-                    ЗАПОЛНИТЬ ФОРМУ
-                  </button>
-                </div>
-
-                <div class="solution-card__visual">
-                  <img
-                    src="img/iphone.png"
-                    alt="Пример лендинга на ноутбуке"
-                    class="solution-card__img"
-                  />
-                </div>
-              </div>
-            </article>
-
-            <div class="solution-mobile-visual">
-              <img
-                src="img/mac.png"
-                alt="Пример лендинга на ноутбуке"
-                class="solution-mobile-visual__img"
-              />
-              <div class="solution-mobile-visual__overlay"></div>
-            </div>
-          </div>
-          <div class="solutions__slide solutions__slide">
-            <article class="solution-card">
-              <div class="solution-card__header">
-                <div class="solution-card__meta">
-                  <span class="solution-card__number">03</span>
-                  <h3 class="solution-card__heading">Лендинг</h3>
-                </div>
-
-                <div class="solution-card__controls">
-                  <button
-                    class="solution-card__arrow solution-card__arrow--prev"
-                    aria-label="Предыдущий слайд"
-                  >
-                    <svg
-                      width="10"
-                      height="15"
-                      viewBox="0 0 10 15"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M7.5 12.5L2.5 7.5L7.5 2.5"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                  </button>
-                  <button
-                    class="solution-card__arrow solution-card__arrow--next"
-                    aria-label="Следующий слайд"
-                  >
-                    <svg
-                      width="10"
-                      height="15"
-                      viewBox="0 0 10 15"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M2.5 12.5L7.5 7.5L2.5 2.5"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-
-              <div class="solution-card__body">
-                <div class="solution-card__content">
-                  <div class="solution-card__price">
-                    <span>от 39.000 р.</span>
-                  </div>
-
-                  <div class="solution-card__text">
-                    <p class="solution-card__lead">
-                      Быстрая настройка. Конверсия. Форма заявки.
-                    </p>
-                    <p class="solution-card__description">
-                      Одностраничный сайт, главная задача которого — побудить
-                      пользователя совершить одно конкретное целевое действие,
-                      например, купить товар, оставить заявку, подписаться на
-                      рассылку, позвонить.
-                    </p>
-                  </div>
-
-                  <button class="btn btn--green solution-card__btn">
-                    ЗАПОЛНИТЬ ФОРМУ
-                  </button>
-                </div>
-
-                <div class="solution-card__visual">
-                  <img
-                    src="img/mac.png"
-                    alt="Пример лендинга на ноутбуке"
-                    class="solution-card__img"
-                  />
-                </div>
-              </div>
-            </article>
-
-            <div class="solution-mobile-visual">
-              <img
-                src="img/mac.png"
-                alt="Пример лендинга на ноутбуке"
-                class="solution-mobile-visual__img"
-              />
-              <div class="solution-mobile-visual__overlay"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="stages">
-      <div class="container">
-        <h2 class="stages__title">ЭТАПЫ РАБОТЫ</h2>
-
-        <nav class="stages__nav">
-          <ul class="stages__nav-list">
-            <li
-              class="stages__nav-item stages__nav-item--active"
-              data-index="0"
-            >
-              Бриф
-            </li>
-
-            <li class="stages__nav-arrow" aria-hidden="true"></li>
-
-            <li class="stages__nav-item" data-index="1">Прототип</li>
-
-            <li class="stages__nav-arrow" aria-hidden="true"></li>
-
-            <li class="stages__nav-item" data-index="2">Дизайн</li>
-
-            <li class="stages__nav-arrow" aria-hidden="true"></li>
-
-            <li class="stages__nav-item" data-index="3">Верстка</li>
-
-            <li class="stages__nav-arrow" aria-hidden="true"></li>
-
-            <li class="stages__nav-item" data-index="4">Запуск</li>
-
-            <li class="stages__nav-arrow" aria-hidden="true"></li>
-
-            <li class="stages__nav-item" data-index="5">Поддержка</li>
-          </ul>
-        </nav>
-      </div>
-      <div class="stages__slider swiper">
-        <div class="stages__track swiper-wrapper">
-          <article class="stage-card swiper-slide">
-            <div class="stage-card__content">
-              <p class="stage-card__text">
-                Определяем цели, задачи и требования проекта. Формируем чёткое
-                техническое задание.
-              </p>
-            </div>
-            <div class="stage-card__number-wrap">
-              <img src="img/01.svg" alt="01" class="stage-card__number" />
-            </div>
-            <img src="img/stage-1.png" alt="Visual" class="stage-card__img" />
-          </article>
-
-          <article class="stage-card swiper-slide">
-            <div class="stage-card__content">
-              <p class="stage-card__text">
-                Создаём схему страниц и логики — быстро согласуем структуру
-                будущего сайта.
-              </p>
-            </div>
-            <div class="stage-card__number-wrap">
-              <img src="img/02.svg" alt="02" class="stage-card__number" />
-            </div>
-            <img src="img/stage-2.png" alt="Visual" class="stage-card__img" />
-          </article>
-
-          <article class="stage-card swiper-slide">
-            <div class="stage-card__content">
-              <p class="stage-card__text">
-                Разрабатываем визуальный стиль и внешний вид — сайт становится
-                понятным и привлекательным.
-              </p>
-            </div>
-            <div class="stage-card__number-wrap">
-              <img src="img/03.svg" alt="03" class="stage-card__number" />
-            </div>
-            <img src="img/stage-3.png" alt="Visual" class="stage-card__img" />
-          </article>
-
-          <article class="stage-card swiper-slide">
-            <div class="stage-card__content">
-              <p class="stage-card__text">
-                Переводим дизайн в работающий сайт — настраиваем адаптивность и
-                функционал.
-              </p>
-            </div>
-            <div class="stage-card__number-wrap">
-              <img src="img/04.svg" alt="04" class="stage-card__number" />
-            </div>
-            <img src="img/stage-4.png" alt="Visual" class="stage-card__img" />
-          </article>
-
-          <article class="stage-card swiper-slide">
-            <div class="stage-card__content">
-              <p class="stage-card__text">
-                Размещаем сайт на хостинге, подключаем домен и проводим
-                финальные проверки.
-              </p>
-            </div>
-            <div class="stage-card__number-wrap">
-              <img src="img/05.svg" alt="05" class="stage-card__number" />
-            </div>
-            <img src="img/stage-5.png" alt="Visual" class="stage-card__img" />
-          </article>
-
-          <article class="stage-card swiper-slide">
-            <div class="stage-card__content">
-              <p class="stage-card__text">
-                Обновляем, исправляем и развиваем сайт после запуска.
-              </p>
-            </div>
-            <div class="stage-card__number-wrap">
-              <img src="img/06.svg" alt="06" class="stage-card__number" />
-            </div>
-            <img src="img/stage-6.png" alt="Visual" class="stage-card__img" />
-          </article>
-        </div>
-      </div>
-    </section>
-    <section class="reviews">
-      <div class="container">
-        <h2 class="reviews__title">ОТЗЫВЫ</h2>
-      </div>
-
-      <div class="reviews__scroll-wrapper">
-        <div class="reviews__track" id="reviewsTrack">
-          <div class="reviews__group">
-            <article class="review-card">
-              <div class="review-card__info">
-                <div class="review-card__category">Оформление соц-сетей</div>
-
-                <blockquote class="review-card__body">
-                  <p>
-                    “Все быстро и классно, оформили соц-сети без лишних
-                    объяснений, поддержали фирменный стиль компании, спасибо за
-                    оперативность”
-                  </p>
-                </blockquote>
-              </div>
-
-              <div class="review-card__footer">
-                <img
-                  src="img/person-img-2.png"
-                  alt="Дмитрий Смородов"
-                  class="review-card__avatar"
-                />
-                <div class="review-card__author">
-                  <span class="review-card__name">Дмитрий Смородов</span>
-                  <cite class="review-card__company">“STEKLO&IDEA”</cite>
-                </div>
-              </div>
-            </article>
-            <article class="review-card">
-              <div class="review-card__info">
-                <div class="review-card__category">Оформление соц-сетей</div>
-
-                <blockquote class="review-card__body">
-                  <p>
-                    “Все быстро и классно, оформили соц-сети без лишних
-                    объяснений, поддержали фирменный стиль компании, спасибо за
-                    оперативность”
-                  </p>
-                </blockquote>
-              </div>
-
-              <div class="review-card__footer">
-                <img
-                  src="img/person-img-2.png"
-                  alt="Дмитрий Смородов"
-                  class="review-card__avatar"
-                />
-                <div class="review-card__author">
-                  <span class="review-card__name">Дмитрий Смородов</span>
-                  <cite class="review-card__company">“STEKLO&IDEA”</cite>
-                </div>
-              </div>
-            </article>
-          </div>
+          <nav class="header__nav">
+            <a href="#" class="header__link">УСЛУГИ</a>
+            <a href="#" class="header__link">ЭТАПЫ РАБОТЫ</a>
+          </nav>
         </div>
 
-        <div class="container">
-          <p class="reviews__disclaimer">
-            Информация взята из сервиса “Яндекс-карты”
+        <a href="/" class="header__logo">
+          <img src="img/logo-main.svg" alt="Result Logo" class="header__logo-img header__logo-img--desktop" />
+          <img src="img/logo-white.svg" alt="Result Logo" class="header__logo-img header__logo-img--mobile" />
+        </a>
+
+        <div class="header__right">
+          <a href="tel:+79955721248" class="header__phone">+7 (995) 572 12-48</a>
+          <a href="mailto:resultpoint.dev@gmail.com" class="header__email">resultpoint.dev@gmail.com</a>
+        </div>
+      </header>
+
+      <div class="hero__content">
+        <div class="hero__text-block">
+          <h1 class="hero__title">
+            Сайт под ключ <br />
+            который продает
+          </h1>
+          <p class="hero__subtitle">
+            Бесплатный первичный анализ вашего сайта за 3 минуты
           </p>
         </div>
-      </div>
-    </section>
-    <section class="order">
-      <div class="order__visual">
-        <img
-          src="img/order-visual.png"
-          alt=""
-          class="order__img"
-          loading="lazy"
-        />
-      </div>
 
-      <div class="container order__container">
-        <div class="order__content">
-          <h2 class="order__title">
-            ГОТОВЫ СДЕЛАТЬ ЗАКАЗ?<br />
-            ОСТАВЬТЕ ЗАЯВКУ И МЫ<br />
-            СВЯЖЕМСЯ С ВАМИ
-          </h2>
+        <button class="btn btn--white hero__btn">ОСТАВИТЬ ЗАЯВКУ</button>
+      </div>
+    </div>
+  </section>
+  <section class="solutions">
+    <div class="container">
+      <h2 class="solutions__title">НАШЕ РЕШЕНИЕ</h2>
+
+      <div class="solutions__slider">
+        <div class="solutions__slide solutions__slide--active">
+          <article class="solution-card">
+            <div class="solution-card__header">
+              <div class="solution-card__meta">
+                <span class="solution-card__number">01</span>
+                <h3 class="solution-card__heading">Лендинг</h3>
+              </div>
+
+              <div class="solution-card__controls">
+                <button class="solution-card__arrow solution-card__arrow--prev" disabled aria-label="Предыдущий слайд">
+                  <svg width="10" height="15" viewBox="0 0 10 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.5 12.5L2.5 7.5L7.5 2.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </button>
+                <button class="solution-card__arrow solution-card__arrow--next" aria-label="Следующий слайд">
+                  <svg width="10" height="15" viewBox="0 0 10 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2.5 12.5L7.5 7.5L2.5 2.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <div class="solution-card__body">
+              <div class="solution-card__content">
+                <div class="solution-card__price">
+                  <span>от 39.000 р.</span>
+                </div>
+
+                <div class="solution-card__text">
+                  <p class="solution-card__lead">
+                    Быстрая настройка. Конверсия. Форма заявки.
+                  </p>
+                  <p class="solution-card__description">
+                    Одностраничный сайт, главная задача которого — побудить
+                    пользователя совершить одно конкретное целевое действие,
+                    например, купить товар, оставить заявку, подписаться на
+                    рассылку, позвонить.
+                  </p>
+                </div>
+
+                <button class="btn btn--green solution-card__btn">
+                  ЗАПОЛНИТЬ ФОРМУ
+                </button>
+              </div>
+
+              <div class="solution-card__visual">
+                <img src="img/mac.webp" alt="Пример лендинга на ноутбуке" class="solution-card__img" />
+              </div>
+            </div>
+          </article>
+
+          <div class="solution-mobile-visual">
+            <img src="img/mac.webp" alt="Пример лендинга на ноутбуке" class="solution-mobile-visual__img" />
+            <div class="solution-mobile-visual__overlay"></div>
+          </div>
         </div>
-
-        <div class="order__form-wrapper">
-          <form class="order-form" id="orderForm" novalidate>
-            <div class="order-form__row">
-              <div class="order-form__group">
-                <label for="userName" class="order-form__label">
-                  Ваше имя<span class="required">*</span>
-                </label>
-                <input
-                  type="text"
-                  id="userName"
-                  name="name"
-                  class="order-form__input"
-                  placeholder="Имя"
-                  required
-                  minlength="2"
-                />
-                <span class="order-form__error" id="nameError"></span>
+        <div class="solutions__slide solutions__slide">
+          <article class="solution-card">
+            <div class="solution-card__header">
+              <div class="solution-card__meta">
+                <span class="solution-card__number">02</span>
+                <h3 class="solution-card__heading">Интернет-магазин</h3>
               </div>
 
-              <div class="order-form__group">
-                <label for="userEmail" class="order-form__label">
-                  Почта<span class="required">*</span>
-                </label>
-                <input
-                  type="email"
-                  id="userEmail"
-                  name="email"
-                  class="order-form__input"
-                  placeholder="example@gmail.com"
-                  required
-                />
-                <span class="order-form__error" id="emailError"></span>
+              <div class="solution-card__controls">
+                <button class="solution-card__arrow solution-card__arrow--prev" aria-label="Предыдущий слайд">
+                  <svg width="10" height="15" viewBox="0 0 10 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.5 12.5L2.5 7.5L7.5 2.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </button>
+                <button class="solution-card__arrow solution-card__arrow--next" aria-label="Следующий слайд">
+                  <svg width="10" height="15" viewBox="0 0 10 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2.5 12.5L7.5 7.5L2.5 2.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </button>
               </div>
+            </div>
+
+            <div class="solution-card__body">
+              <div class="solution-card__content">
+                <div class="solution-card__price">
+                  <span>от 65.000 р.</span>
+                </div>
+
+                <div class="solution-card__text">
+                  <p class="solution-card__lead">
+                    Онлайн-оплата. Каталог. Админ-панель.
+                  </p>
+                  <p class="solution-card__description">
+                    Одностраничный сайт, главная задача которого — побудить
+                    пользователя совершить одно конкретное целевое действие,
+                    например, купить товар, оставить заявку, подписаться на
+                    рассылку, позвонить.
+                  </p>
+                </div>
+
+                <button class="btn btn--green solution-card__btn">
+                  ЗАПОЛНИТЬ ФОРМУ
+                </button>
+              </div>
+
+              <div class="solution-card__visual">
+                <img src="img/iphone.webp" alt="Пример лендинга на ноутбуке" class="solution-card__img" />
+              </div>
+            </div>
+          </article>
+
+          <div class="solution-mobile-visual">
+            <img src="img/mac.webp" alt="Пример лендинга на ноутбуке" class="solution-mobile-visual__img" />
+            <div class="solution-mobile-visual__overlay"></div>
+          </div>
+        </div>
+        <div class="solutions__slide solutions__slide">
+          <article class="solution-card">
+            <div class="solution-card__header">
+              <div class="solution-card__meta">
+                <span class="solution-card__number">03</span>
+                <h3 class="solution-card__heading">Лендинг</h3>
+              </div>
+
+              <div class="solution-card__controls">
+                <button class="solution-card__arrow solution-card__arrow--prev" aria-label="Предыдущий слайд">
+                  <svg width="10" height="15" viewBox="0 0 10 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.5 12.5L2.5 7.5L7.5 2.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </button>
+                <button class="solution-card__arrow solution-card__arrow--next" aria-label="Следующий слайд">
+                  <svg width="10" height="15" viewBox="0 0 10 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2.5 12.5L7.5 7.5L2.5 2.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <div class="solution-card__body">
+              <div class="solution-card__content">
+                <div class="solution-card__price">
+                  <span>от 39.000 р.</span>
+                </div>
+
+                <div class="solution-card__text">
+                  <p class="solution-card__lead">
+                    Быстрая настройка. Конверсия. Форма заявки.
+                  </p>
+                  <p class="solution-card__description">
+                    Одностраничный сайт, главная задача которого — побудить
+                    пользователя совершить одно конкретное целевое действие,
+                    например, купить товар, оставить заявку, подписаться на
+                    рассылку, позвонить.
+                  </p>
+                </div>
+
+                <button class="btn btn--green solution-card__btn">
+                  ЗАПОЛНИТЬ ФОРМУ
+                </button>
+              </div>
+
+              <div class="solution-card__visual">
+                <img src="img/mac.webp" alt="Пример лендинга на ноутбуке" class="solution-card__img" />
+              </div>
+            </div>
+          </article>
+
+          <div class="solution-mobile-visual">
+            <img src="img/mac.webp" alt="Пример лендинга на ноутбуке" class="solution-mobile-visual__img" />
+            <div class="solution-mobile-visual__overlay"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="stages">
+    <div class="container">
+      <h2 class="stages__title">ЭТАПЫ РАБОТЫ</h2>
+
+      <nav class="stages__nav">
+        <ul class="stages__nav-list">
+          <li class="stages__nav-item stages__nav-item--active" data-index="0">
+            Бриф
+          </li>
+
+          <li class="stages__nav-arrow" aria-hidden="true"></li>
+
+          <li class="stages__nav-item" data-index="1">Прототип</li>
+
+          <li class="stages__nav-arrow" aria-hidden="true"></li>
+
+          <li class="stages__nav-item" data-index="2">Дизайн</li>
+
+          <li class="stages__nav-arrow" aria-hidden="true"></li>
+
+          <li class="stages__nav-item" data-index="3">Верстка</li>
+
+          <li class="stages__nav-arrow" aria-hidden="true"></li>
+
+          <li class="stages__nav-item" data-index="4">Запуск</li>
+
+          <li class="stages__nav-arrow" aria-hidden="true"></li>
+
+          <li class="stages__nav-item" data-index="5">Поддержка</li>
+        </ul>
+      </nav>
+    </div>
+    <div class="stages__slider swiper">
+      <div class="stages__track swiper-wrapper">
+        <article class="stage-card swiper-slide">
+          <div class="stage-card__content">
+            <p class="stage-card__text">
+              Определяем цели, задачи и требования проекта. Формируем чёткое
+              техническое задание.
+            </p>
+          </div>
+          <div class="stage-card__number-wrap">
+            <img src="img/01.svg" alt="01" class="stage-card__number" />
+          </div>
+          <img src="img/stage-1.webp" alt="Visual" class="stage-card__img" />
+        </article>
+
+        <article class="stage-card swiper-slide">
+          <div class="stage-card__content">
+            <p class="stage-card__text">
+              Создаём схему страниц и логики — быстро согласуем структуру
+              будущего сайта.
+            </p>
+          </div>
+          <div class="stage-card__number-wrap">
+            <img src="img/02.svg" alt="02" class="stage-card__number" />
+          </div>
+          <img src="img/stage-2.webp" alt="Visual" class="stage-card__img" />
+        </article>
+
+        <article class="stage-card swiper-slide">
+          <div class="stage-card__content">
+            <p class="stage-card__text">
+              Разрабатываем визуальный стиль и внешний вид — сайт становится
+              понятным и привлекательным.
+            </p>
+          </div>
+          <div class="stage-card__number-wrap">
+            <img src="img/03.svg" alt="03" class="stage-card__number" />
+          </div>
+          <img src="img/stage-3.webp" alt="Visual" class="stage-card__img" />
+        </article>
+
+        <article class="stage-card swiper-slide">
+          <div class="stage-card__content">
+            <p class="stage-card__text">
+              Переводим дизайн в работающий сайт — настраиваем адаптивность и
+              функционал.
+            </p>
+          </div>
+          <div class="stage-card__number-wrap">
+            <img src="img/04.svg" alt="04" class="stage-card__number" />
+          </div>
+          <img src="img/stage-4.webp" alt="Visual" class="stage-card__img" />
+        </article>
+
+        <article class="stage-card swiper-slide">
+          <div class="stage-card__content">
+            <p class="stage-card__text">
+              Размещаем сайт на хостинге, подключаем домен и проводим
+              финальные проверки.
+            </p>
+          </div>
+          <div class="stage-card__number-wrap">
+            <img src="img/05.svg" alt="05" class="stage-card__number" />
+          </div>
+          <img src="img/stage-5.webp" alt="Visual" class="stage-card__img" />
+        </article>
+
+        <article class="stage-card swiper-slide">
+          <div class="stage-card__content">
+            <p class="stage-card__text">
+              Обновляем, исправляем и развиваем сайт после запуска.
+            </p>
+          </div>
+          <div class="stage-card__number-wrap">
+            <img src="img/06.svg" alt="06" class="stage-card__number" />
+          </div>
+          <img src="img/stage-6.webp" alt="Visual" class="stage-card__img" />
+        </article>
+      </div>
+    </div>
+  </section>
+  <section class="reviews">
+    <div class="container">
+      <h2 class="reviews__title">ОТЗЫВЫ</h2>
+    </div>
+
+    <div class="reviews__scroll-wrapper">
+      <div class="reviews__track" id="reviewsTrack">
+        <div class="reviews__group">
+          <article class="review-card">
+            <div class="review-card__info">
+              <div class="review-card__category">Оформление соц-сетей</div>
+
+              <blockquote class="review-card__body">
+                <p>
+                  “Все быстро и классно, оформили соц-сети без лишних
+                  объяснений, поддержали фирменный стиль компании, спасибо за
+                  оперативность”
+                </p>
+              </blockquote>
+            </div>
+
+            <div class="review-card__footer">
+              <img src="img/person-img-2.webp" alt="Дмитрий Смородов" class="review-card__avatar" />
+              <div class="review-card__author">
+                <span class="review-card__name">Дмитрий Смородов</span>
+                <cite class="review-card__company">“STEKLO&IDEA”</cite>
+              </div>
+            </div>
+          </article>
+          <article class="review-card">
+            <div class="review-card__info">
+              <div class="review-card__category">Оформление соц-сетей</div>
+
+              <blockquote class="review-card__body">
+                <p>
+                  “Все быстро и классно, оформили соц-сети без лишних
+                  объяснений, поддержали фирменный стиль компании, спасибо за
+                  оперативность”
+                </p>
+              </blockquote>
+            </div>
+
+            <div class="review-card__footer">
+              <img src="img/person-img-2.webp" alt="Дмитрий Смородов" class="review-card__avatar" />
+              <div class="review-card__author">
+                <span class="review-card__name">Дмитрий Смородов</span>
+                <cite class="review-card__company">“STEKLO&IDEA”</cite>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="container">
+        <p class="reviews__disclaimer">
+          Информация взята из сервиса “Яндекс-карты”
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="order">
+    <div class="order__visual">
+      <img src="img/order-visual.webp" alt="" class="order__img" loading="lazy" />
+    </div>
+
+    <div class="container order__container">
+      <div class="order__content">
+        <h2 class="order__title">
+          ГОТОВЫ СДЕЛАТЬ ЗАКАЗ?<br />
+          ОСТАВЬТЕ ЗАЯВКУ И МЫ<br />
+          СВЯЖЕМСЯ С ВАМИ
+        </h2>
+      </div>
+
+      <div class="order__form-wrapper">
+        <form class="order-form" id="orderForm" novalidate>
+          <div class="order-form__row">
+            <div class="order-form__group">
+              <label for="userName" class="order-form__label">
+                Ваше имя<span class="required">*</span>
+              </label>
+              <input type="text" id="userName" name="name" class="order-form__input" placeholder="Имя" required
+                minlength="2" />
+              <span class="order-form__error" id="nameError"></span>
             </div>
 
             <div class="order-form__group">
-              <label for="userPhone" class="order-form__label"
-                >Номер телефона</label
-              >
-              <input
-                type="tel"
-                id="userPhone"
-                name="phone"
-                class="order-form__input"
-                placeholder="+7 (999) 123-45-67"
-              />
-            </div>
-
-            <div class="order-form__checkbox-wrapper">
-              <label class="custom-checkbox" id="policyLabel">
-                <input
-                  type="checkbox"
-                  name="policy"
-                  id="policyCheckbox"
-                  required
-                />
-                <span class="custom-checkbox__visual"></span>
-                <span class="custom-checkbox__text">
-                  Я ознакомлен (-на) с политикой конфиденциальности и даю
-                  согласие на обработку персональных данных
-                </span>
+              <label for="userEmail" class="order-form__label">
+                Почта<span class="required">*</span>
               </label>
+              <input type="email" id="userEmail" name="email" class="order-form__input" placeholder="example@gmail.com"
+                required />
+              <span class="order-form__error" id="emailError"></span>
             </div>
+          </div>
 
-            <button type="submit" class="btn btn--green order-form__submit">
-              ОСТАВИТЬ ЗАЯВКУ
-            </button>
-          </form>
-        </div>
-      </div>
-    </section>
+          <div class="order-form__group">
+            <label for="userPhone" class="order-form__label">Номер телефона</label>
+            <input type="tel" id="userPhone" name="phone" class="order-form__input" placeholder="+7 (999) 123-45-67" />
+          </div>
 
-    <div id="toast-container" class="toast-container"></div>
-    <section class="faq">
-      <div class="container">
-        <h2 class="faq__title">ЧАСТЫЕ ВОПРОСЫ</h2>
-
-        <div class="faq__wrapper">
-          <div class="faq__item">
-            <button class="faq__header" type="button">
-              <span class="faq__question">Цена</span>
-              <span class="faq__toggle">
-                <svg
-                  class="faq__icon"
-                  width="14"
-                  height="14"
-                  viewBox="0 0 14 14"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M7 1V13M1 7H13"
-                    stroke="white"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                  />
-                </svg>
+          <div class="order-form__checkbox-wrapper">
+            <label class="custom-checkbox" id="policyLabel">
+              <input type="checkbox" name="policy" id="policyCheckbox" required />
+              <span class="custom-checkbox__visual"></span>
+              <span class="custom-checkbox__text">
+                Я ознакомлен (-на) с политикой конфиденциальности и даю
+                согласие на обработку персональных данных
               </span>
-            </button>
-            <div class="faq__body">
-              <div class="faq__content">
-                <p class="faq__text">
-                  Цена формируется не «за страницы», а за результат: аналитику,
-                  структуру, дизайн, программирование и тестирование. Мы сразу
-                  закладываем решение под ваши задачи — без скрытых доплат и
-                  «сюрпризов» в процессе. В итоге вы получаете не просто сайт, а
-                  рабочий инструмент для бизнеса.
-                </p>
-              </div>
-            </div>
+            </label>
           </div>
 
-          <div class="faq__item">
-            <button class="faq__header" type="button">
-              <span class="faq__question">Сроки</span>
-              <span class="faq__toggle">
-                <svg
-                  class="faq__icon"
-                  width="14"
-                  height="14"
-                  viewBox="0 0 14 14"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M7 1V13M1 7H13"
-                    stroke="white"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                  />
-                </svg>
-              </span>
-            </button>
-            <div class="faq__body">
-              <div class="faq__content">
-                <p class="faq__text">
-                  Сроки зависят от сложности проекта. Лендинг в среднем занимает
-                  от 7 до 14 дней, многостраничный сайт — от 3 недель. Мы всегда
-                  фиксируем сроки в договоре и соблюдаем этапы разработки.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="faq__item">
-            <button class="faq__header" type="button">
-              <span class="faq__question">Гарантия</span>
-              <span class="faq__toggle">
-                <svg
-                  class="faq__icon"
-                  width="14"
-                  height="14"
-                  viewBox="0 0 14 14"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M7 1V13M1 7H13"
-                    stroke="white"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                  />
-                </svg>
-              </span>
-            </button>
-            <div class="faq__body">
-              <div class="faq__content">
-                <p class="faq__text">
-                  Мы предоставляем техническую гарантию и поддержку в течение
-                  месяца после запуска. Если будут обнаружены баги или ошибки,
-                  мы исправим их бесплатно и оперативно.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <footer class="footer">
-      <div class="footer__bg">
-        <img src="img/result-footer.svg" alt="" aria-hidden="true" />
-      </div>
-
-      <div class="container">
-        <div class="footer__inner">
-          <div class="footer__body">
-            <h2 class="footer__title">КОНТАКТЫ</h2>
-
-            <div class="footer__content">
-              <div class="footer__contacts">
-                <div class="footer__block">
-                  <h3 class="footer__subtitle">Россия</h3>
-                  <div class="footer__info">
-                    <span class="footer__text footer__text--faded"
-                      >result point</span
-                    >
-                    <span class="footer__text footer__text--faded"
-                      >г. Новосибирск</span
-                    >
-                  </div>
-                  <div class="footer__action">
-                    <a
-                      href="tel:+79955721248"
-                      class="footer__link footer__link--phone"
-                      >+7 (995) 572 12-48</a
-                    >
-                    <a
-                      href="mailto:resultpoint.dev@gmail.com"
-                      class="footer__link footer__link--email"
-                      >resultpoint.dev@gmail.com</a
-                    >
-                  </div>
-                </div>
-
-                <div class="footer__socials">
-                  <a href="#" class="social-btn" aria-label="VK">
-                    <img src="img/VK.svg" alt="VK" />
-                  </a>
-                  <a href="#" class="social-btn" aria-label="Telegram">
-                    <img src="img/TG.svg" alt="Telegram" />
-                  </a>
-                </div>
-              </div>
-
-              <nav class="footer__nav">
-                <h3 class="footer__subtitle">Ссылки</h3>
-                <div class="footer__nav-grid">
-                  <ul class="footer__nav-col">
-                    <li><a href="#" class="footer__nav-link">О НАС</a></li>
-                    <li>
-                      <a href="#" class="footer__nav-link">НАШИ УСЛУГИ</a>
-                    </li>
-                    <li>
-                      <a href="#" class="footer__nav-link">ЭТАПЫ РАБОТЫ</a>
-                    </li>
-                  </ul>
-                  <ul class="footer__nav-col">
-                    <li><a href="#" class="footer__nav-link">КОНТАКТЫ</a></li>
-                    <li><a href="#" class="footer__nav-link">ПОРТФОЛИО</a></li>
-                    <li><a href="#" class="footer__nav-link">ОТЗЫВЫ</a></li>
-                  </ul>
-                  <ul class="footer__nav-col">
-                    <li><a href="#" class="footer__nav-link">FAQ</a></li>
-                  </ul>
-                </div>
-              </nav>
-            </div>
-          </div>
-          <div class="footer__bottom">
-            <p class="footer__copyright">
-              Copyright by result point @2025-2025
-            </p>
-          </div>
-        </div>
-      </div>
-    </footer>
-    <div class="burger-menu" id="burgerMenu" aria-hidden="true">
-      <img
-        src="img/burger-bkg.svg"
-        alt=""
-        class="burger-menu__bg"
-        aria-hidden="true"
-      />
-
-      <div class="burger-menu__content">
-        <button
-          class="burger-menu__close"
-          id="burgerClose"
-          aria-label="Закрыть меню"
-        >
-          <span></span>
-          <span></span>
-        </button>
-
-        <nav class="burger-menu__nav">
-          <a href="#" class="burger-menu__link">УСЛУГИ</a>
-          <a href="#" class="burger-menu__link">ЭТАПЫ РАБОТЫ</a>
-          <a href="#" class="burger-menu__link">ОТЗЫВЫ</a>
-          <a href="#" class="burger-menu__link">ОСТАВИТЬ ЗАЯВКУ</a>
-          <a href="#" class="burger-menu__link">ЧАСТЫЕ ВОПРОСЫ</a>
-        </nav>
+          <button type="submit" class="btn btn--green order-form__submit">
+            ОСТАВИТЬ ЗАЯВКУ
+          </button>
+        </form>
       </div>
     </div>
-    <script src="js/main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        // 1. Инициализация Слайдера
-        const mainSwiper = new Swiper(".stages__slider", {
-          slidesPerView: "auto",
-          spaceBetween: 0,
-          centeredSlides: true,
-          centeredSlidesBounds: true,
-          speed: 600,
-          grabCursor: true,
-          slideActiveClass: "swiper-slide-active",
-          touchEventsTarget: "container",
-        });
+  </section>
 
-        // 2. Навигация
-        const navItems = document.querySelectorAll(".stages__nav-item");
+  <div id="toast-container" class="toast-container"></div>
+  <section class="faq">
+    <div class="container">
+      <h2 class="faq__title">ЧАСТЫЕ ВОПРОСЫ</h2>
 
-        // Добавили второй аргумент 'shouldScroll' (по умолчанию true)
-        const updateNavState = (activeIndex, shouldScroll = true) => {
-          navItems.forEach((item, index) => {
-            if (index === activeIndex) {
-              item.classList.add("stages__nav-item--active");
+      <div class="faq__wrapper">
+        <div class="faq__item">
+          <button class="faq__header" type="button">
+            <span class="faq__question">Цена</span>
+            <span class="faq__toggle">
+              <svg class="faq__icon" width="14" height="14" viewBox="0 0 14 14" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 1V13M1 7H13" stroke="white" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </span>
+          </button>
+          <div class="faq__body">
+            <div class="faq__content">
+              <p class="faq__text">
+                Цена формируется не «за страницы», а за результат: аналитику,
+                структуру, дизайн, программирование и тестирование. Мы сразу
+                закладываем решение под ваши задачи — без скрытых доплат и
+                «сюрпризов» в процессе. В итоге вы получаете не просто сайт, а
+                рабочий инструмент для бизнеса.
+              </p>
+            </div>
+          </div>
+        </div>
 
-              // Выполняем скролл, только если разрешено
-              if (shouldScroll) {
-                item.scrollIntoView({
-                  behavior: "smooth",
-                  block: "nearest",
-                  inline: "center",
-                });
-              }
-            } else {
-              item.classList.remove("stages__nav-item--active");
+        <div class="faq__item">
+          <button class="faq__header" type="button">
+            <span class="faq__question">Сроки</span>
+            <span class="faq__toggle">
+              <svg class="faq__icon" width="14" height="14" viewBox="0 0 14 14" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 1V13M1 7H13" stroke="white" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </span>
+          </button>
+          <div class="faq__body">
+            <div class="faq__content">
+              <p class="faq__text">
+                Сроки зависят от сложности проекта. Лендинг в среднем занимает
+                от 7 до 14 дней, многостраничный сайт — от 3 недель. Мы всегда
+                фиксируем сроки в договоре и соблюдаем этапы разработки.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq__item">
+          <button class="faq__header" type="button">
+            <span class="faq__question">Гарантия</span>
+            <span class="faq__toggle">
+              <svg class="faq__icon" width="14" height="14" viewBox="0 0 14 14" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 1V13M1 7H13" stroke="white" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </span>
+          </button>
+          <div class="faq__body">
+            <div class="faq__content">
+              <p class="faq__text">
+                Мы предоставляем техническую гарантию и поддержку в течение
+                месяца после запуска. Если будут обнаружены баги или ошибки,
+                мы исправим их бесплатно и оперативно.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="footer__bg">
+      <img src="img/result-footer.svg" alt="" aria-hidden="true" />
+    </div>
+
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__body">
+          <h2 class="footer__title">КОНТАКТЫ</h2>
+
+          <div class="footer__content">
+            <div class="footer__contacts">
+              <div class="footer__block">
+                <h3 class="footer__subtitle">Россия</h3>
+                <div class="footer__info">
+                  <span class="footer__text footer__text--faded">result point</span>
+                  <span class="footer__text footer__text--faded">г. Новосибирск</span>
+                </div>
+                <div class="footer__action">
+                  <a href="tel:+79955721248" class="footer__link footer__link--phone">+7 (995) 572 12-48</a>
+                  <a href="mailto:resultpoint.dev@gmail.com"
+                    class="footer__link footer__link--email">resultpoint.dev@gmail.com</a>
+                </div>
+              </div>
+
+              <div class="footer__socials">
+                <a href="#" class="social-btn" aria-label="VK">
+                  <img src="img/VK.svg" alt="VK" />
+                </a>
+                <a href="#" class="social-btn" aria-label="Telegram">
+                  <img src="img/TG.svg" alt="Telegram" />
+                </a>
+              </div>
+            </div>
+
+            <nav class="footer__nav">
+              <h3 class="footer__subtitle">Ссылки</h3>
+              <div class="footer__nav-grid">
+                <ul class="footer__nav-col">
+                  <li><a href="#" class="footer__nav-link">О НАС</a></li>
+                  <li>
+                    <a href="#" class="footer__nav-link">НАШИ УСЛУГИ</a>
+                  </li>
+                  <li>
+                    <a href="#" class="footer__nav-link">ЭТАПЫ РАБОТЫ</a>
+                  </li>
+                </ul>
+                <ul class="footer__nav-col">
+                  <li><a href="#" class="footer__nav-link">КОНТАКТЫ</a></li>
+                  <li><a href="#" class="footer__nav-link">ПОРТФОЛИО</a></li>
+                  <li><a href="#" class="footer__nav-link">ОТЗЫВЫ</a></li>
+                </ul>
+                <ul class="footer__nav-col">
+                  <li><a href="#" class="footer__nav-link">FAQ</a></li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <p class="footer__copyright">
+            Copyright by result point @2025-2025
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div class="burger-menu" id="burgerMenu" aria-hidden="true">
+    <img src="img/burger-bkg.svg" alt="" class="burger-menu__bg" aria-hidden="true" />
+
+    <div class="burger-menu__content">
+      <button class="burger-menu__close" id="burgerClose" aria-label="Закрыть меню">
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="burger-menu__nav">
+        <a href="#" class="burger-menu__link">УСЛУГИ</a>
+        <a href="#" class="burger-menu__link">ЭТАПЫ РАБОТЫ</a>
+        <a href="#" class="burger-menu__link">ОТЗЫВЫ</a>
+        <a href="#" class="burger-menu__link">ОСТАВИТЬ ЗАЯВКУ</a>
+        <a href="#" class="burger-menu__link">ЧАСТЫЕ ВОПРОСЫ</a>
+      </nav>
+    </div>
+  </div>
+  <script src="js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // 1. Инициализация Слайдера
+      const mainSwiper = new Swiper(".stages__slider", {
+        slidesPerView: "auto",
+        spaceBetween: 0,
+        centeredSlides: true,
+        centeredSlidesBounds: true,
+        speed: 600,
+        grabCursor: true,
+        slideActiveClass: "swiper-slide-active",
+        touchEventsTarget: "container",
+      });
+
+      // 2. Навигация
+      const navItems = document.querySelectorAll(".stages__nav-item");
+
+      // Добавили второй аргумент 'shouldScroll' (по умолчанию true)
+      const updateNavState = (activeIndex, shouldScroll = true) => {
+        navItems.forEach((item, index) => {
+          if (index === activeIndex) {
+            item.classList.add("stages__nav-item--active");
+
+            // Выполняем скролл, только если разрешено
+            if (shouldScroll) {
+              item.scrollIntoView({
+                behavior: "smooth",
+                block: "nearest",
+                inline: "center",
+              });
             }
-          });
-        };
-
-        // Клик по тексту
-        navItems.forEach((item, index) => {
-          item.addEventListener("click", () => {
-            mainSwiper.slideTo(index);
-          });
+          } else {
+            item.classList.remove("stages__nav-item--active");
+          }
         });
+      };
 
-        // Синхронизация при свайпе
-        mainSwiper.on("slideChange", () => {
-          // При свайпе скролл меню нужен
-          updateNavState(mainSwiper.activeIndex, true);
-        });
-
-        // Старт (передаем false, чтобы при загрузке НЕ скроллило)
-        updateNavState(0, false);
-
-        // Клик по тексту
-        navItems.forEach((item, index) => {
-          item.addEventListener("click", () => {
-            mainSwiper.slideTo(index);
-          });
+      // Клик по тексту
+      navItems.forEach((item, index) => {
+        item.addEventListener("click", () => {
+          mainSwiper.slideTo(index);
         });
       });
-    </script>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const track = document.getElementById("reviewsTrack");
-        if (!track) return;
 
-        // Находим эталонную группу (первый элемент в треке)
-        const originalGroup = track.querySelector(".reviews__group");
-        if (!originalGroup) return;
+      // Синхронизация при свайпе
+      mainSwiper.on("slideChange", () => {
+        // При свайпе скролл меню нужен
+        updateNavState(mainSwiper.activeIndex, true);
+      });
 
-        // Настройки
-        const speed = 0.5; // Скорость (чем меньше, тем медленнее)
-        let currentPos = 0;
-        let animationId;
-        let totalWidth = 0; // Ширина одного цикла (группы)
+      // Старт (передаем false, чтобы при загрузке НЕ скроллило)
+      updateNavState(0, false);
 
-        // Функция инициализации контента
-        const initMarquee = () => {
-          // 1. Сбрасываем трек до состояния "только оригинал"
-          // Сначала останавливаем анимацию, чтобы не было конфликтов
-          cancelAnimationFrame(animationId);
+      // Клик по тексту
+      navItems.forEach((item, index) => {
+        item.addEventListener("click", () => {
+          mainSwiper.slideTo(index);
+        });
+      });
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const track = document.getElementById("reviewsTrack");
+      if (!track) return;
 
-          // Удаляем все клоны, оставляем только первый элемент (originalGroup)
-          while (track.children.length > 1) {
-            track.removeChild(track.lastChild);
-          }
+      // Находим эталонную группу (первый элемент в треке)
+      const originalGroup = track.querySelector(".reviews__group");
+      if (!originalGroup) return;
 
-          // Сбрасываем позицию
+      // Настройки
+      const speed = 0.5; // Скорость (чем меньше, тем медленнее)
+      let currentPos = 0;
+      let animationId;
+      let totalWidth = 0; // Ширина одного цикла (группы)
+
+      // Функция инициализации контента
+      const initMarquee = () => {
+        // 1. Сбрасываем трек до состояния "только оригинал"
+        // Сначала останавливаем анимацию, чтобы не было конфликтов
+        cancelAnimationFrame(animationId);
+
+        // Удаляем все клоны, оставляем только первый элемент (originalGroup)
+        while (track.children.length > 1) {
+          track.removeChild(track.lastChild);
+        }
+
+        // Сбрасываем позицию
+        currentPos = 0;
+        track.style.transform = `translate3d(0, 0, 0)`;
+
+        // 2. Вычисляем размеры
+        // Получаем gap из CSS (важно, чтобы не хардкодить 20px)
+        const trackStyle = window.getComputedStyle(track);
+        const gap = parseFloat(trackStyle.gap) || 0;
+
+        // Ширина одной группы = ширина элемента + gap
+        const groupRect = originalGroup.getBoundingClientRect();
+        const singleGroupWidth = groupRect.width + gap;
+
+        // Сохраняем ширину цикла для анимации
+        totalWidth = singleGroupWidth;
+
+        // 3. Рассчитываем необходимое количество клонов
+        // Нам нужно заполнить экран (window.innerWidth)
+        // + добавить запас (еще одну ширину экрана, чтобы при скролле не было дыр)
+        // + еще одну группу для безопасности цикла.
+        const screenWidth = window.innerWidth;
+        const minWidthToCover = screenWidth * 2 + singleGroupWidth;
+
+        // Сколько групп нужно, чтобы покрыть это расстояние?
+        const groupsNeeded = Math.ceil(minWidthToCover / singleGroupWidth);
+
+        // 4. Создаем клоны
+        // i начинается с 1, так как 0-й элемент (оригинал) уже есть
+        for (let i = 1; i < groupsNeeded; i++) {
+          const clone = originalGroup.cloneNode(true);
+          clone.setAttribute("aria-hidden", "true"); // Скрываем дубликаты от скринридеров
+          track.appendChild(clone);
+        }
+
+        // Перезапускаем анимацию
+        animationLoop();
+      };
+
+      // Цикл анимации
+      const animationLoop = () => {
+        currentPos += speed;
+
+        // Если прокрутили на ширину одной группы (цикл завершен) -> сбрасываем в 0
+        // Это происходит мгновенно и незаметно, так как клон выглядит идентично началу
+        if (currentPos >= totalWidth) {
           currentPos = 0;
-          track.style.transform = `translate3d(0, 0, 0)`;
+        }
 
-          // 2. Вычисляем размеры
-          // Получаем gap из CSS (важно, чтобы не хардкодить 20px)
-          const trackStyle = window.getComputedStyle(track);
-          const gap = parseFloat(trackStyle.gap) || 0;
+        track.style.transform = `translate3d(-${currentPos}px, 0, 0)`;
+        animationId = requestAnimationFrame(animationLoop);
+      };
 
-          // Ширина одной группы = ширина элемента + gap
-          const groupRect = originalGroup.getBoundingClientRect();
-          const singleGroupWidth = groupRect.width + gap;
+      // Запуск
+      // Используем setTimeout, чтобы убедиться, что CSS стили (шрифты, размеры) загрузились
+      // и getBoundingClientRect вернул верные значения
+      setTimeout(initMarquee, 100);
 
-          // Сохраняем ширину цикла для анимации
-          totalWidth = singleGroupWidth;
-
-          // 3. Рассчитываем необходимое количество клонов
-          // Нам нужно заполнить экран (window.innerWidth)
-          // + добавить запас (еще одну ширину экрана, чтобы при скролле не было дыр)
-          // + еще одну группу для безопасности цикла.
-          const screenWidth = window.innerWidth;
-          const minWidthToCover = screenWidth * 2 + singleGroupWidth;
-
-          // Сколько групп нужно, чтобы покрыть это расстояние?
-          const groupsNeeded = Math.ceil(minWidthToCover / singleGroupWidth);
-
-          // 4. Создаем клоны
-          // i начинается с 1, так как 0-й элемент (оригинал) уже есть
-          for (let i = 1; i < groupsNeeded; i++) {
-            const clone = originalGroup.cloneNode(true);
-            clone.setAttribute("aria-hidden", "true"); // Скрываем дубликаты от скринридеров
-            track.appendChild(clone);
-          }
-
-          // Перезапускаем анимацию
-          animationLoop();
-        };
-
-        // Цикл анимации
-        const animationLoop = () => {
-          currentPos += speed;
-
-          // Если прокрутили на ширину одной группы (цикл завершен) -> сбрасываем в 0
-          // Это происходит мгновенно и незаметно, так как клон выглядит идентично началу
-          if (currentPos >= totalWidth) {
-            currentPos = 0;
-          }
-
-          track.style.transform = `translate3d(-${currentPos}px, 0, 0)`;
-          animationId = requestAnimationFrame(animationLoop);
-        };
-
-        // Запуск
-        // Используем setTimeout, чтобы убедиться, что CSS стили (шрифты, размеры) загрузились
-        // и getBoundingClientRect вернул верные значения
-        setTimeout(initMarquee, 100);
-
-        // Пересчет при ресайзе окна (чтобы добавить клонов, если окно растянули)
-        let resizeTimer;
-        window.addEventListener("resize", () => {
-          clearTimeout(resizeTimer);
-          resizeTimer = setTimeout(initMarquee, 200); // Дебаунс, чтобы не дергалось при каждом пикселе
-        });
+      // Пересчет при ресайзе окна (чтобы добавить клонов, если окно растянули)
+      let resizeTimer;
+      window.addEventListener("resize", () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(initMarquee, 200); // Дебаунс, чтобы не дергалось при каждом пикселе
       });
-    </script>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        // --- 1. Настройка элементов ---
-        const form = document.getElementById("orderForm");
-        const policyCheckbox = document.getElementById("policyCheckbox");
-        const policyLabel = document.getElementById("policyLabel");
-        const phoneInput = document.getElementById("userPhone");
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // --- 1. Настройка элементов ---
+      const form = document.getElementById("orderForm");
+      const policyCheckbox = document.getElementById("policyCheckbox");
+      const policyLabel = document.getElementById("policyLabel");
+      const phoneInput = document.getElementById("userPhone");
 
-        if (!form) return;
+      if (!form) return;
 
-        // --- 2. Логика Чекбокса (JS-driven) ---
-        // Принудительно управляем визуальным состоянием через класс
-        if (policyCheckbox && policyLabel) {
-          policyCheckbox.addEventListener("change", () => {
-            if (policyCheckbox.checked) {
-              policyLabel.classList.add("is-checked");
-              policyLabel.classList.remove("error"); // Убираем красную рамку сразу
-            } else {
-              policyLabel.classList.remove("is-checked");
-            }
-          });
-        }
-
-        // --- 3. Маска телефона ---
-        const phoneMask = (e) => {
-          let el = e.target,
-            clearVal = el.value.replace(/\D/g, ""),
-            matrix = "+7 (___) ___-__-__",
-            i = 0,
-            def = matrix.replace(/\D/g, ""),
-            val = clearVal;
-
-          if (def.length >= val.length) val = def;
-
-          el.value = matrix.replace(/./g, function (a) {
-            return /[_\d]/.test(a) && i < val.length
-              ? val.charAt(i++)
-              : i >= val.length
-                ? ""
-                : a;
-          });
-        };
-
-        if (phoneInput) {
-          phoneInput.addEventListener("input", phoneMask);
-          phoneInput.addEventListener("focus", () => {
-            if (!phoneInput.value) phoneInput.value = "+7 ";
-          });
-          phoneInput.addEventListener("blur", () => {
-            if (phoneInput.value === "+7 ") phoneInput.value = "";
-          });
-        }
-
-        // --- 4. Тост-уведомления ---
-        const showToast = (message, type = "success") => {
-          let container = document.getElementById("toast-container");
-          if (!container) {
-            container = document.createElement("div");
-            container.style.cssText =
-              "position:fixed; top:20px; right:20px; z-index:9999; display:flex; flex-direction:column; gap:10px;";
-            container.id = "toast-container";
-            document.body.appendChild(container);
+      // --- 2. Логика Чекбокса (JS-driven) ---
+      // Принудительно управляем визуальным состоянием через класс
+      if (policyCheckbox && policyLabel) {
+        policyCheckbox.addEventListener("change", () => {
+          if (policyCheckbox.checked) {
+            policyLabel.classList.add("is-checked");
+            policyLabel.classList.remove("error"); // Убираем красную рамку сразу
+          } else {
+            policyLabel.classList.remove("is-checked");
           }
+        });
+      }
 
-          const toast = document.createElement("div");
-          const color = type === "success" ? "#007E3A" : "#FF0000";
-          const icon = type === "success" ? "✔" : "✖";
+      // --- 3. Маска телефона ---
+      const phoneMask = (e) => {
+        let el = e.target,
+          clearVal = el.value.replace(/\D/g, ""),
+          matrix = "+7 (___) ___-__-__",
+          i = 0,
+          def = matrix.replace(/\D/g, ""),
+          val = clearVal;
 
-          toast.style.cssText = `
+        if (def.length >= val.length) val = def;
+
+        el.value = matrix.replace(/./g, function (a) {
+          return /[_\d]/.test(a) && i < val.length
+            ? val.charAt(i++)
+            : i >= val.length
+              ? ""
+              : a;
+        });
+      };
+
+      if (phoneInput) {
+        phoneInput.addEventListener("input", phoneMask);
+        phoneInput.addEventListener("focus", () => {
+          if (!phoneInput.value) phoneInput.value = "+7 ";
+        });
+        phoneInput.addEventListener("blur", () => {
+          if (phoneInput.value === "+7 ") phoneInput.value = "";
+        });
+      }
+
+      // --- 4. Тост-уведомления ---
+      const showToast = (message, type = "success") => {
+        let container = document.getElementById("toast-container");
+        if (!container) {
+          container = document.createElement("div");
+          container.style.cssText =
+            "position:fixed; top:20px; right:20px; z-index:9999; display:flex; flex-direction:column; gap:10px;";
+          container.id = "toast-container";
+          document.body.appendChild(container);
+        }
+
+        const toast = document.createElement("div");
+        const color = type === "success" ? "#007E3A" : "#FF0000";
+        const icon = type === "success" ? "✔" : "✖";
+
+        toast.style.cssText = `
             background: #fff; border-left: 4px solid ${color}; padding: 16px 24px;
             border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.15);
             display: flex; gap: 12px; align-items: center; font-family: 'Montserrat', sans-serif;
             min-width: 280px; transform: translateX(100%); transition: transform 0.3s ease;
           `;
 
-          toast.innerHTML = `<span style="color:${color}; font-weight:bold; font-size:1.2em;">${icon}</span><span>${message}</span>`;
-          container.appendChild(toast);
+        toast.innerHTML = `<span style="color:${color}; font-weight:bold; font-size:1.2em;">${icon}</span><span>${message}</span>`;
+        container.appendChild(toast);
 
-          // Анимация входа
-          requestAnimationFrame(
-            () => (toast.style.transform = "translateX(0)"),
-          );
+        // Анимация входа
+        requestAnimationFrame(
+          () => (toast.style.transform = "translateX(0)"),
+        );
 
-          // Удаление
+        // Удаление
+        setTimeout(() => {
+          toast.style.transform = "translateX(120%)";
+          setTimeout(() => toast.remove(), 300);
+        }, 3000);
+      };
+
+      // --- 5. Валидация и Отправка ---
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        let errors = 0;
+
+        // Валидация Имени
+        const nameInp = form.querySelector('input[name="name"]');
+        if (nameInp.value.trim().length < 2) {
+          showError(nameInp, "Введите имя");
+          errors++;
+        } else showSuccess(nameInp);
+
+        // Валидация Почты
+        const emailInp = form.querySelector('input[name="email"]');
+        if (!emailInp.value.includes("@") || !emailInp.value.includes(".")) {
+          showError(emailInp, "Введите корректную почту");
+          errors++;
+        } else showSuccess(emailInp);
+
+        // Валидация Чекбокса (Важно!)
+        if (!policyCheckbox.checked) {
+          policyLabel.classList.add("error");
+          errors++;
+        } else {
+          policyLabel.classList.remove("error");
+        }
+
+        // Итог
+        if (errors === 0) {
+          const btn = form.querySelector('button[type="submit"]');
+          const oldText = btn.textContent;
+          btn.textContent = "Отправка...";
+          btn.disabled = true;
+
+          // Имитация успешной отправки
           setTimeout(() => {
-            toast.style.transform = "translateX(120%)";
-            setTimeout(() => toast.remove(), 300);
-          }, 3000);
-        };
+            showToast("Заявка успешно отправлена!");
+            form.reset();
+            policyLabel.classList.remove("is-checked"); // Сброс визуала галочки
 
-        // --- 5. Валидация и Отправка ---
-        form.addEventListener("submit", (e) => {
-          e.preventDefault();
-          let errors = 0;
-
-          // Валидация Имени
-          const nameInp = form.querySelector('input[name="name"]');
-          if (nameInp.value.trim().length < 2) {
-            showError(nameInp, "Введите имя");
-            errors++;
-          } else showSuccess(nameInp);
-
-          // Валидация Почты
-          const emailInp = form.querySelector('input[name="email"]');
-          if (!emailInp.value.includes("@") || !emailInp.value.includes(".")) {
-            showError(emailInp, "Введите корректную почту");
-            errors++;
-          } else showSuccess(emailInp);
-
-          // Валидация Чекбокса (Важно!)
-          if (!policyCheckbox.checked) {
-            policyLabel.classList.add("error");
-            errors++;
-          } else {
-            policyLabel.classList.remove("error");
-          }
-
-          // Итог
-          if (errors === 0) {
-            const btn = form.querySelector('button[type="submit"]');
-            const oldText = btn.textContent;
-            btn.textContent = "Отправка...";
-            btn.disabled = true;
-
-            // Имитация успешной отправки
-            setTimeout(() => {
-              showToast("Заявка успешно отправлена!");
-              form.reset();
-              policyLabel.classList.remove("is-checked"); // Сброс визуала галочки
-
-              // Сброс стилей инпутов
-              form.querySelectorAll(".order-form__input").forEach((i) => {
-                i.style.borderColor = "transparent";
-                i.style.backgroundColor = "#F8F8F8";
-              });
-
-              btn.textContent = oldText;
-              btn.disabled = false;
-            }, 1500);
-          } else {
-            showToast("Заполните обязательные поля", "error");
-          }
-        });
-
-        // Хелперы стилей
-        function showError(input, msg) {
-          input.style.borderColor = "#FF0000";
-          input.style.backgroundColor = "rgba(255,0,0,0.02)";
-          // Можно добавить вывод текста ошибки в span, если нужно
-        }
-        function showSuccess(input) {
-          input.style.borderColor = "#007E3A";
-          input.style.backgroundColor = "#fff";
-        }
-      });
-    </script>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const faqItems = document.querySelectorAll(".faq__item");
-
-        faqItems.forEach((item) => {
-          const header = item.querySelector(".faq__header");
-
-          header.addEventListener("click", () => {
-            const isActive = item.classList.contains("faq__item--active");
-
-            // Закрываем все открытые элементы
-            faqItems.forEach((otherItem) => {
-              otherItem.classList.remove("faq__item--active");
+            // Сброс стилей инпутов
+            form.querySelectorAll(".order-form__input").forEach((i) => {
+              i.style.borderColor = "transparent";
+              i.style.backgroundColor = "#F8F8F8";
             });
 
-            // Если текущий элемент не был активен, открываем его
-            if (!isActive) {
-              item.classList.add("faq__item--active");
-            }
-          });
-        });
+            btn.textContent = oldText;
+            btn.disabled = false;
+          }, 1500);
+        } else {
+          showToast("Заполните обязательные поля", "error");
+        }
       });
-    </script>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const burgerBtn = document.querySelector(".burger-btn");
-        const burgerMenu = document.getElementById("burgerMenu");
-        const burgerClose = document.getElementById("burgerClose");
-        const menuLinks = document.querySelectorAll(".burger-menu__link");
 
-        // Функция открытия
-        const openMenu = () => {
-          burgerMenu.classList.add("is-active");
-          burgerMenu.setAttribute("aria-hidden", "false");
-          document.body.classList.add("menu-open"); // Блокируем скролл фона
-        };
+      // Хелперы стилей
+      function showError(input, msg) {
+        input.style.borderColor = "#FF0000";
+        input.style.backgroundColor = "rgba(255,0,0,0.02)";
+        // Можно добавить вывод текста ошибки в span, если нужно
+      }
+      function showSuccess(input) {
+        input.style.borderColor = "#007E3A";
+        input.style.backgroundColor = "#fff";
+      }
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const faqItems = document.querySelectorAll(".faq__item");
 
-        // Функция закрытия
-        const closeMenu = () => {
-          burgerMenu.classList.remove("is-active");
-          burgerMenu.setAttribute("aria-hidden", "true");
-          document.body.classList.remove("menu-open");
-        };
+      faqItems.forEach((item) => {
+        const header = item.querySelector(".faq__header");
 
-        // 1. Открытие по кнопке в хедере
-        if (burgerBtn) {
-          burgerBtn.addEventListener("click", (e) => {
-            e.stopPropagation(); // Чтобы клик не ушел на document
-            openMenu();
+        header.addEventListener("click", () => {
+          const isActive = item.classList.contains("faq__item--active");
+
+          // Закрываем все открытые элементы
+          faqItems.forEach((otherItem) => {
+            otherItem.classList.remove("faq__item--active");
           });
-        }
 
-        // 2. Закрытие по крестику
-        if (burgerClose) {
-          burgerClose.addEventListener("click", closeMenu);
-        }
-
-        // 3. Закрытие при клике на ссылку (навигация)
-        menuLinks.forEach((link) => {
-          link.addEventListener("click", closeMenu);
-        });
-
-        // 4. Закрытие при клике вне меню (опционально, но удобно для UX)
-        document.addEventListener("click", (e) => {
-          const isClickInside = burgerMenu.contains(e.target);
-          const isClickOnBtn = burgerBtn.contains(e.target);
-
-          // Если меню активно и клик был НЕ по меню и НЕ по кнопке открытия
-          if (
-            burgerMenu.classList.contains("is-active") &&
-            !isClickInside &&
-            !isClickOnBtn
-          ) {
-            closeMenu();
-          }
-        });
-
-        // 5. Закрытие по Esc
-        document.addEventListener("keydown", (e) => {
-          if (
-            e.key === "Escape" &&
-            burgerMenu.classList.contains("is-active")
-          ) {
-            closeMenu();
+          // Если текущий элемент не был активен, открываем его
+          if (!isActive) {
+            item.classList.add("faq__item--active");
           }
         });
       });
-    </script>
-  </body>
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const burgerBtn = document.querySelector(".burger-btn");
+      const burgerMenu = document.getElementById("burgerMenu");
+      const burgerClose = document.getElementById("burgerClose");
+      const menuLinks = document.querySelectorAll(".burger-menu__link");
+
+      // Функция открытия
+      const openMenu = () => {
+        burgerMenu.classList.add("is-active");
+        burgerMenu.setAttribute("aria-hidden", "false");
+        document.body.classList.add("menu-open"); // Блокируем скролл фона
+      };
+
+      // Функция закрытия
+      const closeMenu = () => {
+        burgerMenu.classList.remove("is-active");
+        burgerMenu.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("menu-open");
+      };
+
+      // 1. Открытие по кнопке в хедере
+      if (burgerBtn) {
+        burgerBtn.addEventListener("click", (e) => {
+          e.stopPropagation(); // Чтобы клик не ушел на document
+          openMenu();
+        });
+      }
+
+      // 2. Закрытие по крестику
+      if (burgerClose) {
+        burgerClose.addEventListener("click", closeMenu);
+      }
+
+      // 3. Закрытие при клике на ссылку (навигация)
+      menuLinks.forEach((link) => {
+        link.addEventListener("click", closeMenu);
+      });
+
+      // 4. Закрытие при клике вне меню (опционально, но удобно для UX)
+      document.addEventListener("click", (e) => {
+        const isClickInside = burgerMenu.contains(e.target);
+        const isClickOnBtn = burgerBtn.contains(e.target);
+
+        // Если меню активно и клик был НЕ по меню и НЕ по кнопке открытия
+        if (
+          burgerMenu.classList.contains("is-active") &&
+          !isClickInside &&
+          !isClickOnBtn
+        ) {
+          closeMenu();
+        }
+      });
+
+      // 5. Закрытие по Esc
+      document.addEventListener("keydown", (e) => {
+        if (
+          e.key === "Escape" &&
+          burgerMenu.classList.contains("is-active")
+        ) {
+          closeMenu();
+        }
+      });
+    });
+  </script>
+</body>
+
 </html>
