@@ -10,6 +10,7 @@
 
 @use "_faq.scss";
 @use "_footer.scss";
+@use "_preloader.scss";
 .container {
   width: 100%;
   max-width: 1692px;
@@ -60,4 +61,8 @@
     border-color: #ff0000;
     color: #000;
   }
+}
+
+.grecaptcha-badge {
+  display: none !important;
 }
